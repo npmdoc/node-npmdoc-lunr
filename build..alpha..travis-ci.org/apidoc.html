@@ -1,0 +1,4201 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="http://lunrjs.com"
+
+    >lunr (v1.0.0)</a>
+</h1>
+<h4>Simple full-text search in your browser.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lunr">module lunr</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.EventEmitter">
+            function <span class="apidocSignatureSpan">lunr.</span>EventEmitter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Index">
+            function <span class="apidocSignatureSpan">lunr.</span>Index
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Pipeline">
+            function <span class="apidocSignatureSpan">lunr.</span>Pipeline
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.SortedSet">
+            function <span class="apidocSignatureSpan">lunr.</span>SortedSet
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Store">
+            function <span class="apidocSignatureSpan">lunr.</span>Store
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.TokenStore">
+            function <span class="apidocSignatureSpan">lunr.</span>TokenStore
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Vector">
+            function <span class="apidocSignatureSpan">lunr.</span>Vector
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.generateStopWordFilter">
+            function <span class="apidocSignatureSpan">lunr.</span>generateStopWordFilter
+            <span class="apidocSignatureSpan">(stopWords)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.stemmer">
+            function <span class="apidocSignatureSpan">lunr.</span>stemmer
+            <span class="apidocSignatureSpan">(w)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.stopWordFilter">
+            function <span class="apidocSignatureSpan">lunr.</span>stopWordFilter
+            <span class="apidocSignatureSpan">(token)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.tokenizer">
+            function <span class="apidocSignatureSpan">lunr.</span>tokenizer
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.trimmer">
+            function <span class="apidocSignatureSpan">lunr.</span>trimmer
+            <span class="apidocSignatureSpan">(token)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lunr.</span>EventEmitter.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lunr.</span>Index.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lunr.</span>Pipeline.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lunr.</span>Pipeline.registeredFunctions</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lunr.</span>SortedSet.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lunr.</span>Store.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lunr.</span>TokenStore.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lunr.</span>Vector.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lunr.</span>tokenizer.registeredFunctions</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lunr.</span>utils</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">lunr.</span>version</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lunr.EventEmitter">module lunr.EventEmitter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.EventEmitter.EventEmitter">
+            function <span class="apidocSignatureSpan">lunr.</span>EventEmitter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lunr.EventEmitter.prototype">module lunr.EventEmitter.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.EventEmitter.prototype.addListener">
+            function <span class="apidocSignatureSpan">lunr.EventEmitter.prototype.</span>addListener
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.EventEmitter.prototype.emit">
+            function <span class="apidocSignatureSpan">lunr.EventEmitter.prototype.</span>emit
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.EventEmitter.prototype.hasHandler">
+            function <span class="apidocSignatureSpan">lunr.EventEmitter.prototype.</span>hasHandler
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.EventEmitter.prototype.removeListener">
+            function <span class="apidocSignatureSpan">lunr.EventEmitter.prototype.</span>removeListener
+            <span class="apidocSignatureSpan">(name, fn)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lunr.Index">module lunr.Index</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Index.Index">
+            function <span class="apidocSignatureSpan">lunr.</span>Index
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Index.load">
+            function <span class="apidocSignatureSpan">lunr.Index.</span>load
+            <span class="apidocSignatureSpan">(serialisedData)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lunr.Index.prototype">module lunr.Index.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Index.prototype.add">
+            function <span class="apidocSignatureSpan">lunr.Index.prototype.</span>add
+            <span class="apidocSignatureSpan">(doc, emitEvent)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Index.prototype.documentVector">
+            function <span class="apidocSignatureSpan">lunr.Index.prototype.</span>documentVector
+            <span class="apidocSignatureSpan">(documentRef)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Index.prototype.field">
+            function <span class="apidocSignatureSpan">lunr.Index.prototype.</span>field
+            <span class="apidocSignatureSpan">(fieldName, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Index.prototype.idf">
+            function <span class="apidocSignatureSpan">lunr.Index.prototype.</span>idf
+            <span class="apidocSignatureSpan">(term)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Index.prototype.off">
+            function <span class="apidocSignatureSpan">lunr.Index.prototype.</span>off
+            <span class="apidocSignatureSpan">(name, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Index.prototype.on">
+            function <span class="apidocSignatureSpan">lunr.Index.prototype.</span>on
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Index.prototype.ref">
+            function <span class="apidocSignatureSpan">lunr.Index.prototype.</span>ref
+            <span class="apidocSignatureSpan">(refName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Index.prototype.remove">
+            function <span class="apidocSignatureSpan">lunr.Index.prototype.</span>remove
+            <span class="apidocSignatureSpan">(doc, emitEvent)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Index.prototype.search">
+            function <span class="apidocSignatureSpan">lunr.Index.prototype.</span>search
+            <span class="apidocSignatureSpan">(query)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Index.prototype.toJSON">
+            function <span class="apidocSignatureSpan">lunr.Index.prototype.</span>toJSON
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Index.prototype.tokenizer">
+            function <span class="apidocSignatureSpan">lunr.Index.prototype.</span>tokenizer
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Index.prototype.update">
+            function <span class="apidocSignatureSpan">lunr.Index.prototype.</span>update
+            <span class="apidocSignatureSpan">(doc, emitEvent)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Index.prototype.use">
+            function <span class="apidocSignatureSpan">lunr.Index.prototype.</span>use
+            <span class="apidocSignatureSpan">(plugin)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lunr.Pipeline">module lunr.Pipeline</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Pipeline.Pipeline">
+            function <span class="apidocSignatureSpan">lunr.</span>Pipeline
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Pipeline.load">
+            function <span class="apidocSignatureSpan">lunr.Pipeline.</span>load
+            <span class="apidocSignatureSpan">(serialised)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Pipeline.registerFunction">
+            function <span class="apidocSignatureSpan">lunr.Pipeline.</span>registerFunction
+            <span class="apidocSignatureSpan">(fn, label)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Pipeline.warnIfFunctionNotRegistered">
+            function <span class="apidocSignatureSpan">lunr.Pipeline.</span>warnIfFunctionNotRegistered
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lunr.Pipeline.</span>registeredFunctions</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lunr.Pipeline.prototype">module lunr.Pipeline.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Pipeline.prototype.add">
+            function <span class="apidocSignatureSpan">lunr.Pipeline.prototype.</span>add
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Pipeline.prototype.after">
+            function <span class="apidocSignatureSpan">lunr.Pipeline.prototype.</span>after
+            <span class="apidocSignatureSpan">(existingFn, newFn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Pipeline.prototype.before">
+            function <span class="apidocSignatureSpan">lunr.Pipeline.prototype.</span>before
+            <span class="apidocSignatureSpan">(existingFn, newFn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Pipeline.prototype.remove">
+            function <span class="apidocSignatureSpan">lunr.Pipeline.prototype.</span>remove
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Pipeline.prototype.reset">
+            function <span class="apidocSignatureSpan">lunr.Pipeline.prototype.</span>reset
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Pipeline.prototype.run">
+            function <span class="apidocSignatureSpan">lunr.Pipeline.prototype.</span>run
+            <span class="apidocSignatureSpan">(tokens)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Pipeline.prototype.toJSON">
+            function <span class="apidocSignatureSpan">lunr.Pipeline.prototype.</span>toJSON
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lunr.Pipeline.registeredFunctions">module lunr.Pipeline.registeredFunctions</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Pipeline.registeredFunctions.stemmer">
+            function <span class="apidocSignatureSpan">lunr.Pipeline.registeredFunctions.</span>stemmer
+            <span class="apidocSignatureSpan">(w)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Pipeline.registeredFunctions.stopWordFilter">
+            function <span class="apidocSignatureSpan">lunr.Pipeline.registeredFunctions.</span>stopWordFilter
+            <span class="apidocSignatureSpan">(token)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Pipeline.registeredFunctions.trimmer">
+            function <span class="apidocSignatureSpan">lunr.Pipeline.registeredFunctions.</span>trimmer
+            <span class="apidocSignatureSpan">(token)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lunr.SortedSet">module lunr.SortedSet</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.SortedSet.SortedSet">
+            function <span class="apidocSignatureSpan">lunr.</span>SortedSet
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.SortedSet.load">
+            function <span class="apidocSignatureSpan">lunr.SortedSet.</span>load
+            <span class="apidocSignatureSpan">(serialisedData)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lunr.SortedSet.prototype">module lunr.SortedSet.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.SortedSet.prototype.add">
+            function <span class="apidocSignatureSpan">lunr.SortedSet.prototype.</span>add
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.SortedSet.prototype.clone">
+            function <span class="apidocSignatureSpan">lunr.SortedSet.prototype.</span>clone
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.SortedSet.prototype.forEach">
+            function <span class="apidocSignatureSpan">lunr.SortedSet.prototype.</span>forEach
+            <span class="apidocSignatureSpan">(fn, ctx)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.SortedSet.prototype.indexOf">
+            function <span class="apidocSignatureSpan">lunr.SortedSet.prototype.</span>indexOf
+            <span class="apidocSignatureSpan">(elem)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.SortedSet.prototype.intersect">
+            function <span class="apidocSignatureSpan">lunr.SortedSet.prototype.</span>intersect
+            <span class="apidocSignatureSpan">(otherSet)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.SortedSet.prototype.locationFor">
+            function <span class="apidocSignatureSpan">lunr.SortedSet.prototype.</span>locationFor
+            <span class="apidocSignatureSpan">(elem)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.SortedSet.prototype.map">
+            function <span class="apidocSignatureSpan">lunr.SortedSet.prototype.</span>map
+            <span class="apidocSignatureSpan">(fn, ctx)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.SortedSet.prototype.toArray">
+            function <span class="apidocSignatureSpan">lunr.SortedSet.prototype.</span>toArray
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.SortedSet.prototype.toJSON">
+            function <span class="apidocSignatureSpan">lunr.SortedSet.prototype.</span>toJSON
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.SortedSet.prototype.union">
+            function <span class="apidocSignatureSpan">lunr.SortedSet.prototype.</span>union
+            <span class="apidocSignatureSpan">(otherSet)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lunr.Store">module lunr.Store</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Store.Store">
+            function <span class="apidocSignatureSpan">lunr.</span>Store
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Store.load">
+            function <span class="apidocSignatureSpan">lunr.Store.</span>load
+            <span class="apidocSignatureSpan">(serialisedData)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lunr.Store.prototype">module lunr.Store.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Store.prototype.get">
+            function <span class="apidocSignatureSpan">lunr.Store.prototype.</span>get
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Store.prototype.has">
+            function <span class="apidocSignatureSpan">lunr.Store.prototype.</span>has
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Store.prototype.remove">
+            function <span class="apidocSignatureSpan">lunr.Store.prototype.</span>remove
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Store.prototype.set">
+            function <span class="apidocSignatureSpan">lunr.Store.prototype.</span>set
+            <span class="apidocSignatureSpan">(id, tokens)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Store.prototype.toJSON">
+            function <span class="apidocSignatureSpan">lunr.Store.prototype.</span>toJSON
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lunr.TokenStore">module lunr.TokenStore</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.TokenStore.TokenStore">
+            function <span class="apidocSignatureSpan">lunr.</span>TokenStore
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.TokenStore.load">
+            function <span class="apidocSignatureSpan">lunr.TokenStore.</span>load
+            <span class="apidocSignatureSpan">(serialisedData)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lunr.TokenStore.prototype">module lunr.TokenStore.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.TokenStore.prototype.add">
+            function <span class="apidocSignatureSpan">lunr.TokenStore.prototype.</span>add
+            <span class="apidocSignatureSpan">(token, doc, root)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.TokenStore.prototype.count">
+            function <span class="apidocSignatureSpan">lunr.TokenStore.prototype.</span>count
+            <span class="apidocSignatureSpan">(token, root)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.TokenStore.prototype.expand">
+            function <span class="apidocSignatureSpan">lunr.TokenStore.prototype.</span>expand
+            <span class="apidocSignatureSpan">(token, memo)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.TokenStore.prototype.get">
+            function <span class="apidocSignatureSpan">lunr.TokenStore.prototype.</span>get
+            <span class="apidocSignatureSpan">(token, root)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.TokenStore.prototype.getNode">
+            function <span class="apidocSignatureSpan">lunr.TokenStore.prototype.</span>getNode
+            <span class="apidocSignatureSpan">(token)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.TokenStore.prototype.has">
+            function <span class="apidocSignatureSpan">lunr.TokenStore.prototype.</span>has
+            <span class="apidocSignatureSpan">(token)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.TokenStore.prototype.remove">
+            function <span class="apidocSignatureSpan">lunr.TokenStore.prototype.</span>remove
+            <span class="apidocSignatureSpan">(token, ref)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.TokenStore.prototype.toJSON">
+            function <span class="apidocSignatureSpan">lunr.TokenStore.prototype.</span>toJSON
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lunr.Vector">module lunr.Vector</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Vector.Vector">
+            function <span class="apidocSignatureSpan">lunr.</span>Vector
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Vector.Node">
+            function <span class="apidocSignatureSpan">lunr.Vector.</span>Node
+            <span class="apidocSignatureSpan">(idx, val, next)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lunr.Vector.prototype">module lunr.Vector.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Vector.prototype.dot">
+            function <span class="apidocSignatureSpan">lunr.Vector.prototype.</span>dot
+            <span class="apidocSignatureSpan">(otherVector)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Vector.prototype.insert">
+            function <span class="apidocSignatureSpan">lunr.Vector.prototype.</span>insert
+            <span class="apidocSignatureSpan">(idx, val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Vector.prototype.magnitude">
+            function <span class="apidocSignatureSpan">lunr.Vector.prototype.</span>magnitude
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.Vector.prototype.similarity">
+            function <span class="apidocSignatureSpan">lunr.Vector.prototype.</span>similarity
+            <span class="apidocSignatureSpan">(otherVector)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lunr.tokenizer">module lunr.tokenizer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.tokenizer.tokenizer">
+            function <span class="apidocSignatureSpan">lunr.</span>tokenizer
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.tokenizer.load">
+            function <span class="apidocSignatureSpan">lunr.tokenizer.</span>load
+            <span class="apidocSignatureSpan">(label)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.tokenizer.registerFunction">
+            function <span class="apidocSignatureSpan">lunr.tokenizer.</span>registerFunction
+            <span class="apidocSignatureSpan">(fn, label)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lunr.tokenizer.</span>registeredFunctions</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lunr.tokenizer.</span>separator</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">lunr.tokenizer.</span>label</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lunr.tokenizer.registeredFunctions">module lunr.tokenizer.registeredFunctions</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.tokenizer.registeredFunctions.default">
+            function <span class="apidocSignatureSpan">lunr.tokenizer.registeredFunctions.</span>default
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lunr.utils">module lunr.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.utils.asString">
+            function <span class="apidocSignatureSpan">lunr.utils.</span>asString
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lunr.utils.warn">
+            function <span class="apidocSignatureSpan">lunr.utils.</span>warn
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lunr" id="apidoc.module.lunr">module lunr</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.EventEmitter" id="apidoc.element.lunr.EventEmitter">
+        function <span class="apidocSignatureSpan">lunr.</span>EventEmitter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">EventEmitter = function () {
+  this.events = {}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Index" id="apidoc.element.lunr.Index">
+        function <span class="apidocSignatureSpan">lunr.</span>Index
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Index = function () {
+  this._fields = []
+  this._ref = &#x27;id&#x27;
+  this.pipeline = new lunr.Pipeline
+  this.documentStore = new lunr.Store
+  this.tokenStore = new lunr.TokenStore
+  this.corpusTokens = new lunr.SortedSet
+  this.eventEmitter =  new lunr.EventEmitter
+  this.tokenizerFn = lunr.tokenizer
+
+  this._idfCache = {}
+
+  this.on(&#x27;add&#x27;, &#x27;remove&#x27;, &#x27;update&#x27;, (function () {
+    this._idfCache = {}
+  }).bind(this))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Pipeline" id="apidoc.element.lunr.Pipeline">
+        function <span class="apidocSignatureSpan">lunr.</span>Pipeline
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Pipeline = function () {
+  this._stack = []
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.SortedSet" id="apidoc.element.lunr.SortedSet">
+        function <span class="apidocSignatureSpan">lunr.</span>SortedSet
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">SortedSet = function () {
+  this.length = 0
+  this.elements = []
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Store" id="apidoc.element.lunr.Store">
+        function <span class="apidocSignatureSpan">lunr.</span>Store
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Store = function () {
+  this.store = {}
+  this.length = 0
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.TokenStore" id="apidoc.element.lunr.TokenStore">
+        function <span class="apidocSignatureSpan">lunr.</span>TokenStore
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">TokenStore = function () {
+  this.root = { docs: {} }
+  this.length = 0
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Vector" id="apidoc.element.lunr.Vector">
+        function <span class="apidocSignatureSpan">lunr.</span>Vector
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Vector = function () {
+  this._magnitude = null
+  this.list = undefined
+  this.length = 0
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.generateStopWordFilter" id="apidoc.element.lunr.generateStopWordFilter">
+        function <span class="apidocSignatureSpan">lunr.</span>generateStopWordFilter
+        <span class="apidocSignatureSpan">(stopWords)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">generateStopWordFilter = function (stopWords) {
+  var words = stopWords.reduce(function (memo, stopWord) {
+    memo[stopWord] = stopWord
+    return memo
+  }, {})
+
+  return function (token) {
+    if (token &#x26;&#x26; words[token] !== token) return token
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * filter then undefined will be returned.
+ *
+ * @module
+ * @param {String} token The token to pass through the filter
+ * @returns {String}
+ * @see lunr.Pipeline
+ */
+lunr.stopWordFilter = lunr.<span class="apidocCodeKeywordSpan">generateStopWordFilter</span>([
+&#x27;a&#x27;,
+&#x27;able&#x27;,
+&#x27;about&#x27;,
+&#x27;across&#x27;,
+&#x27;after&#x27;,
+&#x27;all&#x27;,
+&#x27;almost&#x27;,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.stemmer" id="apidoc.element.lunr.stemmer">
+        function <span class="apidocSignatureSpan">lunr.</span>stemmer
+        <span class="apidocSignatureSpan">(w)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function porterStemmer(w) {
+  var   stem,
+    suffix,
+    firstch,
+    re,
+    re2,
+    re3,
+    re4;
+
+  if (w.length &#x3c; 3) { return w; }
+
+  firstch = w.substr(0,1);
+  if (firstch == &#x22;y&#x22;) {
+    w = firstch.toUpperCase() + w.substr(1);
+  }
+
+  // Step 1a
+  re = re_1a
+  re2 = re2_1a;
+
+  if (re.test(w)) { w = w.replace(re,&#x22;$1$2&#x22;); }
+  else if (re2.test(w)) { w = w.replace(re2,&#x22;$1$2&#x22;); }
+
+  // Step 1b
+  re = re_1b;
+  re2 = re2_1b;
+  if (re.test(w)) {
+    var fp = re.exec(w);
+    re = re_mgr0;
+    if (re.test(fp[1])) {
+      re = re_1b_2;
+      w = w.replace(re,&#x22;&#x22;);
+    }
+  } else if (re2.test(w)) {
+    var fp = re2.exec(w);
+    stem = fp[1];
+    re2 = re_s_v;
+    if (re2.test(stem)) {
+      w = stem;
+      re2 = re2_1b_2;
+      re3 = re3_1b_2;
+      re4 = re4_1b_2;
+      if (re2.test(w)) {  w = w + &#x22;e&#x22;; }
+      else if (re3.test(w)) { re = re_1b_2; w = w.replace(re,&#x22;&#x22;); }
+      else if (re4.test(w)) { w = w + &#x22;e&#x22;; }
+    }
+  }
+
+  // Step 1c - replace suffix y or Y by i if preceded by a non-vowel which is not the first letter of the word (so cry -&#x3e; cri, by
+ -&#x3e; by, say -&#x3e; say)
+  re = re_1c;
+  if (re.test(w)) {
+    var fp = re.exec(w);
+    stem = fp[1];
+    w = stem + &#x22;i&#x22;;
+  }
+
+  // Step 2
+  re = re_2;
+  if (re.test(w)) {
+    var fp = re.exec(w);
+    stem = fp[1];
+    suffix = fp[2];
+    re = re_mgr0;
+    if (re.test(stem)) {
+      w = stem + step2list[suffix];
+    }
+  }
+
+  // Step 3
+  re = re_3;
+  if (re.test(w)) {
+    var fp = re.exec(w);
+    stem = fp[1];
+    suffix = fp[2];
+    re = re_mgr0;
+    if (re.test(stem)) {
+      w = stem + step3list[suffix];
+    }
+  }
+
+  // Step 4
+  re = re_4;
+  re2 = re2_4;
+  if (re.test(w)) {
+    var fp = re.exec(w);
+    stem = fp[1];
+    re = re_mgr1;
+    if (re.test(stem)) {
+      w = stem;
+    }
+  } else if (re2.test(w)) {
+    var fp = re2.exec(w);
+    stem = fp[1] + fp[2];
+    re2 = re_mgr1;
+    if (re2.test(stem)) {
+      w = stem;
+    }
+  }
+
+  // Step 5
+  re = re_5;
+  if (re.test(w)) {
+    var fp = re.exec(w);
+    stem = fp[1];
+    re = re_mgr1;
+    re2 = re_meq1;
+    re3 = re3_5;
+    if (re.test(stem) || (re2.test(stem) &#x26;&#x26; !(re3.test(stem)))) {
+      w = stem;
+    }
+  }
+
+  re = re_5_1;
+  re2 = re_mgr1;
+  if (re.test(w) &#x26;&#x26; re2.test(w)) {
+    re = re_1b_2;
+    w = w.replace(re,&#x22;&#x22;);
+  }
+
+  // and turn initial Y back to y
+
+  if (firstch == &#x22;y&#x22;) {
+    w = firstch.toLowerCase() + w.substr(1);
+  }
+
+  return w;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.stopWordFilter" id="apidoc.element.lunr.stopWordFilter">
+        function <span class="apidocSignatureSpan">lunr.</span>stopWordFilter
+        <span class="apidocSignatureSpan">(token)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stopWordFilter = function (token) {
+  if (token &#x26;&#x26; words[token] !== token) return token
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.tokenizer" id="apidoc.element.lunr.tokenizer">
+        function <span class="apidocSignatureSpan">lunr.</span>tokenizer
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">tokenizer = function (obj) {
+  if (!arguments.length || obj == null || obj == undefined) return []
+  if (Array.isArray(obj)) return obj.map(function (t) { return lunr.utils.asString(t).toLowerCase() })
+
+  return obj.toString().trim().toLowerCase().split(lunr.tokenizer.separator)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+
+  var idx = new this
+
+  idx._fields = serialisedData.fields
+  idx._ref = serialisedData.ref
+
+  idx.<span class="apidocCodeKeywordSpan">tokenizer</span>(lunr.tokenizer.load(serialisedData.tokenizer))
+  idx.documentStore = lunr.Store.load(serialisedData.documentStore)
+  idx.tokenStore = lunr.TokenStore.load(serialisedData.tokenStore)
+  idx.corpusTokens = lunr.SortedSet.load(serialisedData.corpusTokens)
+  idx.pipeline = lunr.Pipeline.load(serialisedData.pipeline)
+
+  return idx
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.trimmer" id="apidoc.element.lunr.trimmer">
+        function <span class="apidocSignatureSpan">lunr.</span>trimmer
+        <span class="apidocSignatureSpan">(token)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">trimmer = function (token) {
+  return token.replace(/^\W+/, &#x27;&#x27;).replace(/\W+$/, &#x27;&#x27;)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lunr.EventEmitter" id="apidoc.module.lunr.EventEmitter">module lunr.EventEmitter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.EventEmitter.EventEmitter" id="apidoc.element.lunr.EventEmitter.EventEmitter">
+        function <span class="apidocSignatureSpan">lunr.</span>EventEmitter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">EventEmitter = function () {
+  this.events = {}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lunr.EventEmitter.prototype" id="apidoc.module.lunr.EventEmitter.prototype">module lunr.EventEmitter.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.EventEmitter.prototype.addListener" id="apidoc.element.lunr.EventEmitter.prototype.addListener">
+        function <span class="apidocSignatureSpan">lunr.EventEmitter.prototype.</span>addListener
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addListener = function () {
+  var args = Array.prototype.slice.call(arguments),
+      fn = args.pop(),
+      names = args
+
+  if (typeof fn !== &#x22;function&#x22;) throw new TypeError (&#x22;last argument must be a function&#x22;)
+
+  names.forEach(function (name) {
+    if (!this.hasHandler(name)) this.events[name] = []
+    this.events[name].push(fn)
+  }, this)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.EventEmitter.prototype.emit" id="apidoc.element.lunr.EventEmitter.prototype.emit">
+        function <span class="apidocSignatureSpan">lunr.EventEmitter.prototype.</span>emit
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">emit = function (name) {
+  if (!this.hasHandler(name)) return
+
+  var args = Array.prototype.slice.call(arguments, 1)
+
+  this.events[name].forEach(function (fn) {
+    fn.apply(undefined, args)
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+     tf += (tokenCount / fieldLength * field.boost)
+   }
+
+   this.tokenStore.add(token, { ref: docRef, tf: tf })
+ };
+
+ if (emitEvent) this.eventEmitter.<span class="apidocCodeKeywordSpan">emit</span>(&#x27;add&#x27;, doc, this)
+}
+
+/**
+* Removes a document from the index.
+*
+* To make sure documents no longer show up in search results they can be
+* removed from the index using this method.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.EventEmitter.prototype.hasHandler" id="apidoc.element.lunr.EventEmitter.prototype.hasHandler">
+        function <span class="apidocSignatureSpan">lunr.EventEmitter.prototype.</span>hasHandler
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hasHandler = function (name) {
+  return name in this.events
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ var args = Array.prototype.slice.call(arguments),
+     fn = args.pop(),
+     names = args
+
+ if (typeof fn !== &#x22;function&#x22;) throw new TypeError (&#x22;last argument must be a function&#x22;)
+
+ names.forEach(function (name) {
+   if (!this.<span class="apidocCodeKeywordSpan">hasHandler</span>(name)) this.events[name] = []
+   this.events[name].push(fn)
+ }, this)
+}
+
+/**
+* Removes a handler function from a specific event.
+*
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.EventEmitter.prototype.removeListener" id="apidoc.element.lunr.EventEmitter.prototype.removeListener">
+        function <span class="apidocSignatureSpan">lunr.EventEmitter.prototype.</span>removeListener
+        <span class="apidocSignatureSpan">(name, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeListener = function (name, fn) {
+  if (!this.hasHandler(name)) return
+
+  var fnIndex = this.events[name].indexOf(fn)
+  this.events[name].splice(fnIndex, 1)
+
+  if (!this.events[name].length) delete this.events[name]
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* Removes a handler from an event being emitted by the index.
+*
+* @param {String} eventName The name of events to remove the function from.
+* @param {Function} fn The serialised set to load.
+* @memberOf Index
+*/
+lunr.Index.prototype.off = function (name, fn) {
+ return this.eventEmitter.<span class="apidocCodeKeywordSpan">removeListener</span>(name, fn)
+}
+
+/**
+* Loads a previously serialised index.
+*
+* Issues a warning if the index being imported was serialised
+* by a different version of lunr.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lunr.Index" id="apidoc.module.lunr.Index">module lunr.Index</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Index.Index" id="apidoc.element.lunr.Index.Index">
+        function <span class="apidocSignatureSpan">lunr.</span>Index
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Index = function () {
+  this._fields = []
+  this._ref = &#x27;id&#x27;
+  this.pipeline = new lunr.Pipeline
+  this.documentStore = new lunr.Store
+  this.tokenStore = new lunr.TokenStore
+  this.corpusTokens = new lunr.SortedSet
+  this.eventEmitter =  new lunr.EventEmitter
+  this.tokenizerFn = lunr.tokenizer
+
+  this._idfCache = {}
+
+  this.on(&#x27;add&#x27;, &#x27;remove&#x27;, &#x27;update&#x27;, (function () {
+    this._idfCache = {}
+  }).bind(this))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Index.load" id="apidoc.element.lunr.Index.load">
+        function <span class="apidocSignatureSpan">lunr.Index.</span>load
+        <span class="apidocSignatureSpan">(serialisedData)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">load = function (serialisedData) {
+  if (serialisedData.version !== lunr.version) {
+    lunr.utils.warn(&#x27;version mismatch: current &#x27; + lunr.version + &#x27; importing &#x27; + serialisedData.version)
+  }
+
+  var idx = new this
+
+  idx._fields = serialisedData.fields
+  idx._ref = serialisedData.ref
+
+  idx.tokenizer(lunr.tokenizer.load(serialisedData.tokenizer))
+  idx.documentStore = lunr.Store.load(serialisedData.documentStore)
+  idx.tokenStore = lunr.TokenStore.load(serialisedData.tokenStore)
+  idx.corpusTokens = lunr.SortedSet.load(serialisedData.corpusTokens)
+  idx.pipeline = lunr.Pipeline.load(serialisedData.pipeline)
+
+  return idx
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+
+  var idx = new this
+
+  idx._fields = serialisedData.fields
+  idx._ref = serialisedData.ref
+
+  idx.tokenizer(lunr.tokenizer.<span class="apidocCodeKeywordSpan">load</span>(serialisedData.tokenizer))
+  idx.documentStore = lunr.Store.load(serialisedData.documentStore)
+  idx.tokenStore = lunr.TokenStore.load(serialisedData.tokenStore)
+  idx.corpusTokens = lunr.SortedSet.load(serialisedData.corpusTokens)
+  idx.pipeline = lunr.Pipeline.load(serialisedData.pipeline)
+
+  return idx
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lunr.Index.prototype" id="apidoc.module.lunr.Index.prototype">module lunr.Index.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Index.prototype.add" id="apidoc.element.lunr.Index.prototype.add">
+        function <span class="apidocSignatureSpan">lunr.Index.prototype.</span>add
+        <span class="apidocSignatureSpan">(doc, emitEvent)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">add = function (doc, emitEvent) {
+  var docTokens = {},
+      allDocumentTokens = new lunr.SortedSet,
+      docRef = doc[this._ref],
+      emitEvent = emitEvent === undefined ? true : emitEvent
+
+  this._fields.forEach(function (field) {
+    var fieldTokens = this.pipeline.run(this.tokenizerFn(doc[field.name]))
+
+    docTokens[field.name] = fieldTokens
+
+    for (var i = 0; i &#x3c; fieldTokens.length; i++) {
+      var token = fieldTokens[i]
+      allDocumentTokens.add(token)
+      this.corpusTokens.add(token)
+    }
+  }, this)
+
+  this.documentStore.set(docRef, allDocumentTokens)
+
+  for (var i = 0; i &#x3c; allDocumentTokens.length; i++) {
+    var token = allDocumentTokens.elements[i]
+    var tf = 0;
+
+    for (var j = 0; j &#x3c; this._fields.length; j++){
+      var field = this._fields[j]
+      var fieldTokens = docTokens[field.name]
+      var fieldLength = fieldTokens.length
+
+      if (!fieldLength) continue
+
+      var tokenCount = 0
+      for (var k = 0; k &#x3c; fieldLength; k++){
+        if (fieldTokens[k] === token){
+          tokenCount++
+        }
+      }
+
+      tf += (tokenCount / fieldLength * field.boost)
+    }
+
+    this.tokenStore.add(token, { ref: docRef, tf: tf })
+  };
+
+  if (emitEvent) this.eventEmitter.emit(&#x27;add&#x27;, doc, this)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+var doc = {
+    &#x22;title&#x22;: &#x22;Twelfth-Night&#x22;,
+    &#x22;body&#x22;: &#x22;If music be the food of love, play on: Give me excess of it…&#x22;,
+    &#x22;author&#x22;: &#x22;William Shakespeare&#x22;,
+    &#x22;id&#x22;: 1
+}
+idx.<span class="apidocCodeKeywordSpan">add</span>(doc)
+```
+
+Then searching is as simple:
+
+```javascript
+idx.search(&#x22;love&#x22;)
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Index.prototype.documentVector" id="apidoc.element.lunr.Index.prototype.documentVector">
+        function <span class="apidocSignatureSpan">lunr.Index.prototype.</span>documentVector
+        <span class="apidocSignatureSpan">(documentRef)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">documentVector = function (documentRef) {
+  var documentTokens = this.documentStore.get(documentRef),
+      documentTokensLength = documentTokens.length,
+      documentVector = new lunr.Vector
+
+  for (var i = 0; i &#x3c; documentTokensLength; i++) {
+    var token = documentTokens.elements[i],
+        tf = this.tokenStore.get(token)[documentRef].tf,
+        idf = this.idf(token)
+
+    documentVector.insert(this.corpusTokens.indexOf(token), tf * idf)
+  };
+
+  return documentVector
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  var documentSet = documentSets.reduce(function (memo, set) {
+    return memo.intersect(set)
+  })
+
+  return documentSet
+    .map(function (ref) {
+      return { ref: ref, score: queryVector.similarity(this.<span class="apidocCodeKeywordSpan">documentVector</span>(ref)) }
+    }, this)
+    .sort(function (a, b) {
+      return b.score - a.score
+    })
+}
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Index.prototype.field" id="apidoc.element.lunr.Index.prototype.field">
+        function <span class="apidocSignatureSpan">lunr.Index.prototype.</span>field
+        <span class="apidocSignatureSpan">(fieldName, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">field = function (fieldName, opts) {
+  var opts = opts || {},
+      field = { name: fieldName, boost: opts.boost || 1 }
+
+  this._fields.push(field)
+  return this
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## Example
+
+A very simple search index can be created using the following:
+
+```javascript
+var idx = lunr(function () {
+    this.<span class="apidocCodeKeywordSpan">field</span>(&#x27;title&#x27;, { boost: 10 })
+    this.field(&#x27;body&#x27;)
+})
+```
+
+Adding documents to be indexed is as simple as:
+
+```javascript
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Index.prototype.idf" id="apidoc.element.lunr.Index.prototype.idf">
+        function <span class="apidocSignatureSpan">lunr.Index.prototype.</span>idf
+        <span class="apidocSignatureSpan">(term)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">idf = function (term) {
+  var cacheKey = &#x22;@&#x22; + term
+  if (Object.prototype.hasOwnProperty.call(this._idfCache, cacheKey)) return this._idfCache[cacheKey]
+
+  var documentFrequency = this.tokenStore.count(term),
+      idf = 1
+
+  if (documentFrequency &#x3e; 0) {
+    idf = 1 + Math.log(this.documentStore.length / documentFrequency)
+  }
+
+  return this._idfCache[cacheKey] = idf
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  queryTokens
+    .forEach(function (token, i, tokens) {
+      var tf = 1 / tokens.length * this._fields.length * fieldBoosts,
+  self = this
+
+      var set = this.tokenStore.expand(token).reduce(function (memo, key) {
+var pos = self.corpusTokens.indexOf(key),
+    idf = self.<span class="apidocCodeKeywordSpan">idf</span>(key),
+    similarityBoost = 1,
+    set = new lunr.SortedSet
+
+// if the expanded key is not an exact match to the token then
+// penalise the score for this key by how different the key is
+// to the token.
+if (key !== token) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Index.prototype.off" id="apidoc.element.lunr.Index.prototype.off">
+        function <span class="apidocSignatureSpan">lunr.Index.prototype.</span>off
+        <span class="apidocSignatureSpan">(name, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">off = function (name, fn) {
+  return this.eventEmitter.removeListener(name, fn)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Index.prototype.on" id="apidoc.element.lunr.Index.prototype.on">
+        function <span class="apidocSignatureSpan">lunr.Index.prototype.</span>on
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">on = function () {
+  var args = Array.prototype.slice.call(arguments)
+  return this.eventEmitter.addListener.apply(this.eventEmitter, args)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ this.tokenStore = new lunr.TokenStore
+ this.corpusTokens = new lunr.SortedSet
+ this.eventEmitter =  new lunr.EventEmitter
+ this.tokenizerFn = lunr.tokenizer
+
+ this._idfCache = {}
+
+ this.<span class="apidocCodeKeywordSpan">on</span>(&#x27;add&#x27;, &#x27;remove&#x27;, &#x27;update&#x27;, (function () {
+   this._idfCache = {}
+ }).bind(this))
+}
+
+/**
+* Bind a handler to events being emitted by the index.
+*
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Index.prototype.ref" id="apidoc.element.lunr.Index.prototype.ref">
+        function <span class="apidocSignatureSpan">lunr.Index.prototype.</span>ref
+        <span class="apidocSignatureSpan">(refName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ref = function (refName) {
+  this._ref = refName
+  return this
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* Example:
+*
+*     var idx = lunr(function () {
+*       this.field(&#x27;title&#x27;, 10)
+*       this.field(&#x27;tags&#x27;, 100)
+*       this.field(&#x27;body&#x27;)
+*
+*       this.<span class="apidocCodeKeywordSpan">ref</span>(&#x27;cid&#x27;)
+*
+*       this.pipeline.add(function () {
+*         // some custom pipeline function
+*       })
+*
+*     })
+*
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Index.prototype.remove" id="apidoc.element.lunr.Index.prototype.remove">
+        function <span class="apidocSignatureSpan">lunr.Index.prototype.</span>remove
+        <span class="apidocSignatureSpan">(doc, emitEvent)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">remove = function (doc, emitEvent) {
+  var docRef = doc[this._ref],
+      emitEvent = emitEvent === undefined ? true : emitEvent
+
+  if (!this.documentStore.has(docRef)) return
+
+  var docTokens = this.documentStore.get(docRef)
+
+  this.documentStore.remove(docRef)
+
+  docTokens.forEach(function (token) {
+    this.tokenStore.remove(token, docRef)
+  }, this)
+
+  if (emitEvent) this.eventEmitter.emit(&#x27;remove&#x27;, doc, this)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var docRef = doc[this._ref],
+      emitEvent = emitEvent === undefined ? true : emitEvent
+
+  if (!this.documentStore.has(docRef)) return
+
+  var docTokens = this.documentStore.get(docRef)
+
+  this.documentStore.<span class="apidocCodeKeywordSpan">remove</span>(docRef)
+
+  docTokens.forEach(function (token) {
+    this.tokenStore.remove(token, docRef)
+  }, this)
+
+  if (emitEvent) this.eventEmitter.emit(&#x27;remove&#x27;, doc, this)
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Index.prototype.search" id="apidoc.element.lunr.Index.prototype.search">
+        function <span class="apidocSignatureSpan">lunr.Index.prototype.</span>search
+        <span class="apidocSignatureSpan">(query)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">search = function (query) {
+  var queryTokens = this.pipeline.run(this.tokenizerFn(query)),
+      queryVector = new lunr.Vector,
+      documentSets = [],
+      fieldBoosts = this._fields.reduce(function (memo, f) { return memo + f.boost }, 0)
+
+  var hasSomeToken = queryTokens.some(function (token) {
+    return this.tokenStore.has(token)
+  }, this)
+
+  if (!hasSomeToken) return []
+
+  queryTokens
+    .forEach(function (token, i, tokens) {
+      var tf = 1 / tokens.length * this._fields.length * fieldBoosts,
+          self = this
+
+      var set = this.tokenStore.expand(token).reduce(function (memo, key) {
+        var pos = self.corpusTokens.indexOf(key),
+            idf = self.idf(key),
+            similarityBoost = 1,
+            set = new lunr.SortedSet
+
+        // if the expanded key is not an exact match to the token then
+        // penalise the score for this key by how different the key is
+        // to the token.
+        if (key !== token) {
+          var diff = Math.max(3, key.length - token.length)
+          similarityBoost = 1 / Math.log(diff)
+        }
+
+        // calculate the query tf-idf score for this token
+        // applying an similarityBoost to ensure exact matches
+        // these rank higher than expanded terms
+        if (pos &#x3e; -1) queryVector.insert(pos, tf * idf * similarityBoost)
+
+        // add all the documents that have this key into a set
+        // ensuring that the type of key is preserved
+        var matchingDocuments = self.tokenStore.get(key),
+            refs = Object.keys(matchingDocuments),
+            refsLen = refs.length
+
+        for (var i = 0; i &#x3c; refsLen; i++) {
+          set.add(matchingDocuments[refs[i]].ref)
+        }
+
+        return memo.union(set)
+      }, new lunr.SortedSet)
+
+      documentSets.push(set)
+    }, this)
+
+  var documentSet = documentSets.reduce(function (memo, set) {
+    return memo.intersect(set)
+  })
+
+  return documentSet
+    .map(function (ref) {
+      return { ref: ref, score: queryVector.similarity(this.documentVector(ref)) }
+    }, this)
+    .sort(function (a, b) {
+      return b.score - a.score
+    })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+idx.add(doc)
+```
+
+Then searching is as simple:
+
+```javascript
+idx.<span class="apidocCodeKeywordSpan">search</span>(&#x22;love&#x22;)
+```
+
+This returns a list of matching documents with a score of how closely they match the search query:
+
+```javascript
+[{
+&#x22;ref&#x22;: 1,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Index.prototype.toJSON" id="apidoc.element.lunr.Index.prototype.toJSON">
+        function <span class="apidocSignatureSpan">lunr.Index.prototype.</span>toJSON
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toJSON = function () {
+  return {
+    version: lunr.version,
+    fields: this._fields,
+    ref: this._ref,
+    tokenizer: this.tokenizerFn.label,
+    documentStore: this.documentStore.toJSON(),
+    tokenStore: this.tokenStore.toJSON(),
+    corpusTokens: this.corpusTokens.toJSON(),
+    pipeline: this.pipeline.toJSON()
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ */
+lunr.Index.prototype.toJSON = function () {
+  return {
+    version: lunr.version,
+    fields: this._fields,
+    ref: this._ref,
+    tokenizer: this.tokenizerFn.label,
+    documentStore: this.documentStore.<span class="apidocCodeKeywordSpan">toJSON</span>(),
+    tokenStore: this.tokenStore.toJSON(),
+    corpusTokens: this.corpusTokens.toJSON(),
+    pipeline: this.pipeline.toJSON()
+  }
+}
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Index.prototype.tokenizer" id="apidoc.element.lunr.Index.prototype.tokenizer">
+        function <span class="apidocSignatureSpan">lunr.Index.prototype.</span>tokenizer
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">tokenizer = function (fn) {
+  var isRegistered = fn.label &#x26;&#x26; (fn.label in lunr.tokenizer.registeredFunctions)
+
+  if (!isRegistered) {
+    lunr.utils.warn(&#x27;Function is not a registered tokenizer. This may cause problems when serialising the index&#x27;)
+  }
+
+  this.tokenizerFn = fn
+  return this
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+
+  var idx = new this
+
+  idx._fields = serialisedData.fields
+  idx._ref = serialisedData.ref
+
+  idx.<span class="apidocCodeKeywordSpan">tokenizer</span>(lunr.tokenizer.load(serialisedData.tokenizer))
+  idx.documentStore = lunr.Store.load(serialisedData.documentStore)
+  idx.tokenStore = lunr.TokenStore.load(serialisedData.tokenStore)
+  idx.corpusTokens = lunr.SortedSet.load(serialisedData.corpusTokens)
+  idx.pipeline = lunr.Pipeline.load(serialisedData.pipeline)
+
+  return idx
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Index.prototype.update" id="apidoc.element.lunr.Index.prototype.update">
+        function <span class="apidocSignatureSpan">lunr.Index.prototype.</span>update
+        <span class="apidocSignatureSpan">(doc, emitEvent)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">update = function (doc, emitEvent) {
+  var emitEvent = emitEvent === undefined ? true : emitEvent
+
+  this.remove(doc, false)
+  this.add(doc, false)
+
+  if (emitEvent) this.eventEmitter.emit(&#x27;update&#x27;, doc, this)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Index.prototype.use" id="apidoc.element.lunr.Index.prototype.use">
+        function <span class="apidocSignatureSpan">lunr.Index.prototype.</span>use
+        <span class="apidocSignatureSpan">(plugin)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">use = function (plugin) {
+  var args = Array.prototype.slice.call(arguments, 1)
+  args.unshift(this)
+  plugin.apply(this, args)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ *
+ *     var myPlugin = function (idx, arg1, arg2) {
+ *       // `this` is the index to be extended
+ *       // apply any extensions etc here.
+ *     }
+ *
+ *     var idx = lunr(function () {
+ *       this.<span class="apidocCodeKeywordSpan">use</span>(myPlugin, &#x27;arg1&#x27;, &#x27;arg2&#x27;)
+ *     })
+ *
+ * @param {Function} plugin The plugin to apply.
+ * @memberOf Index
+ */
+lunr.Index.prototype.use = function (plugin) {
+var args = Array.prototype.slice.call(arguments, 1)
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lunr.Pipeline" id="apidoc.module.lunr.Pipeline">module lunr.Pipeline</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Pipeline.Pipeline" id="apidoc.element.lunr.Pipeline.Pipeline">
+        function <span class="apidocSignatureSpan">lunr.</span>Pipeline
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Pipeline = function () {
+  this._stack = []
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Pipeline.load" id="apidoc.element.lunr.Pipeline.load">
+        function <span class="apidocSignatureSpan">lunr.Pipeline.</span>load
+        <span class="apidocSignatureSpan">(serialised)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">load = function (serialised) {
+  var pipeline = new lunr.Pipeline
+
+  serialised.forEach(function (fnName) {
+    var fn = lunr.Pipeline.registeredFunctions[fnName]
+
+    if (fn) {
+      pipeline.add(fn)
+    } else {
+      throw new Error(&#x27;Cannot load un-registered function: &#x27; + fnName)
+    }
+  })
+
+  return pipeline
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+
+  var idx = new this
+
+  idx._fields = serialisedData.fields
+  idx._ref = serialisedData.ref
+
+  idx.tokenizer(lunr.tokenizer.<span class="apidocCodeKeywordSpan">load</span>(serialisedData.tokenizer))
+  idx.documentStore = lunr.Store.load(serialisedData.documentStore)
+  idx.tokenStore = lunr.TokenStore.load(serialisedData.tokenStore)
+  idx.corpusTokens = lunr.SortedSet.load(serialisedData.corpusTokens)
+  idx.pipeline = lunr.Pipeline.load(serialisedData.pipeline)
+
+  return idx
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Pipeline.registerFunction" id="apidoc.element.lunr.Pipeline.registerFunction">
+        function <span class="apidocSignatureSpan">lunr.Pipeline.</span>registerFunction
+        <span class="apidocSignatureSpan">(fn, label)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">registerFunction = function (fn, label) {
+  if (label in this.registeredFunctions) {
+    lunr.utils.warn(&#x27;Overwriting existing registered function: &#x27; + label)
+  }
+
+  fn.label = label
+  lunr.Pipeline.registeredFunctions[fn.label] = fn
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+   return w;
+ };
+
+ return porterStemmer;
+})();
+
+lunr.Pipeline.<span class="apidocCodeKeywordSpan">registerFunction</span>(lunr.stemmer, &#x27;stemmer&#x27;)
+/*!
+* lunr.stopWordFilter
+* Copyright (C) 2017 Oliver Nightingale
+*/
+
+/**
+* lunr.generateStopWordFilter builds a stopWordFilter function from the provided
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Pipeline.warnIfFunctionNotRegistered" id="apidoc.element.lunr.Pipeline.warnIfFunctionNotRegistered">
+        function <span class="apidocSignatureSpan">lunr.Pipeline.</span>warnIfFunctionNotRegistered
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">warnIfFunctionNotRegistered = function (fn) {
+  var isRegistered = fn.label &#x26;&#x26; (fn.label in this.registeredFunctions)
+
+  if (!isRegistered) {
+    lunr.utils.warn(&#x27;Function is not registered with pipeline. This may cause problems when serialising the index.\n&#x27;, fn)
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @param {Function} functions Any number of functions to add to the pipeline.
+* @memberOf Pipeline
+*/
+lunr.Pipeline.prototype.add = function () {
+ var fns = Array.prototype.slice.call(arguments)
+
+ fns.forEach(function (fn) {
+   lunr.Pipeline.<span class="apidocCodeKeywordSpan">warnIfFunctionNotRegistered</span>(fn)
+   this._stack.push(fn)
+ }, this)
+}
+
+/**
+* Adds a single function after a function that already exists in the
+* pipeline.
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lunr.Pipeline.prototype" id="apidoc.module.lunr.Pipeline.prototype">module lunr.Pipeline.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Pipeline.prototype.add" id="apidoc.element.lunr.Pipeline.prototype.add">
+        function <span class="apidocSignatureSpan">lunr.Pipeline.prototype.</span>add
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">add = function () {
+  var fns = Array.prototype.slice.call(arguments)
+
+  fns.forEach(function (fn) {
+    lunr.Pipeline.warnIfFunctionNotRegistered(fn)
+    this._stack.push(fn)
+  }, this)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+var doc = {
+    &#x22;title&#x22;: &#x22;Twelfth-Night&#x22;,
+    &#x22;body&#x22;: &#x22;If music be the food of love, play on: Give me excess of it…&#x22;,
+    &#x22;author&#x22;: &#x22;William Shakespeare&#x22;,
+    &#x22;id&#x22;: 1
+}
+idx.<span class="apidocCodeKeywordSpan">add</span>(doc)
+```
+
+Then searching is as simple:
+
+```javascript
+idx.search(&#x22;love&#x22;)
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Pipeline.prototype.after" id="apidoc.element.lunr.Pipeline.prototype.after">
+        function <span class="apidocSignatureSpan">lunr.Pipeline.prototype.</span>after
+        <span class="apidocSignatureSpan">(existingFn, newFn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">after = function (existingFn, newFn) {
+  lunr.Pipeline.warnIfFunctionNotRegistered(newFn)
+
+  var pos = this._stack.indexOf(existingFn)
+  if (pos == -1) {
+    throw new Error(&#x27;Cannot find existingFn&#x27;)
+  }
+
+  pos = pos + 1
+  this._stack.splice(pos, 0, newFn)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Pipeline.prototype.before" id="apidoc.element.lunr.Pipeline.prototype.before">
+        function <span class="apidocSignatureSpan">lunr.Pipeline.prototype.</span>before
+        <span class="apidocSignatureSpan">(existingFn, newFn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">before = function (existingFn, newFn) {
+  lunr.Pipeline.warnIfFunctionNotRegistered(newFn)
+
+  var pos = this._stack.indexOf(existingFn)
+  if (pos == -1) {
+    throw new Error(&#x27;Cannot find existingFn&#x27;)
+  }
+
+  this._stack.splice(pos, 0, newFn)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Pipeline.prototype.remove" id="apidoc.element.lunr.Pipeline.prototype.remove">
+        function <span class="apidocSignatureSpan">lunr.Pipeline.prototype.</span>remove
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">remove = function (fn) {
+  var pos = this._stack.indexOf(fn)
+  if (pos == -1) {
+    return
+  }
+
+  this._stack.splice(pos, 1)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var docRef = doc[this._ref],
+      emitEvent = emitEvent === undefined ? true : emitEvent
+
+  if (!this.documentStore.has(docRef)) return
+
+  var docTokens = this.documentStore.get(docRef)
+
+  this.documentStore.<span class="apidocCodeKeywordSpan">remove</span>(docRef)
+
+  docTokens.forEach(function (token) {
+    this.tokenStore.remove(token, docRef)
+  }, this)
+
+  if (emitEvent) this.eventEmitter.emit(&#x27;remove&#x27;, doc, this)
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Pipeline.prototype.reset" id="apidoc.element.lunr.Pipeline.prototype.reset">
+        function <span class="apidocSignatureSpan">lunr.Pipeline.prototype.</span>reset
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reset = function () {
+  this._stack = []
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Pipeline.prototype.run" id="apidoc.element.lunr.Pipeline.prototype.run">
+        function <span class="apidocSignatureSpan">lunr.Pipeline.prototype.</span>run
+        <span class="apidocSignatureSpan">(tokens)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">run = function (tokens) {
+  var out = [],
+      tokenLength = tokens.length,
+      stackLength = this._stack.length
+
+  for (var i = 0; i &#x3c; tokenLength; i++) {
+    var token = tokens[i]
+
+    for (var j = 0; j &#x3c; stackLength; j++) {
+      token = this._stack[j](token, i, tokens)
+      if (token === void 0 || token === &#x27;&#x27;) break
+    };
+
+    if (token !== void 0 &#x26;&#x26; token !== &#x27;&#x27;) out.push(token)
+  };
+
+  return out
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+lunr.Index.prototype.add = function (doc, emitEvent) {
+  var docTokens = {},
+  allDocumentTokens = new lunr.SortedSet,
+  docRef = doc[this._ref],
+  emitEvent = emitEvent === undefined ? true : emitEvent
+
+  this._fields.forEach(function (field) {
+var fieldTokens = this.pipeline.<span class="apidocCodeKeywordSpan">run</span>(this.tokenizerFn(doc[field.name]))
+
+docTokens[field.name] = fieldTokens
+
+for (var i = 0; i &#x3c; fieldTokens.length; i++) {
+  var token = fieldTokens[i]
+  allDocumentTokens.add(token)
+  this.corpusTokens.add(token)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Pipeline.prototype.toJSON" id="apidoc.element.lunr.Pipeline.prototype.toJSON">
+        function <span class="apidocSignatureSpan">lunr.Pipeline.prototype.</span>toJSON
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toJSON = function () {
+  return this._stack.map(function (fn) {
+    lunr.Pipeline.warnIfFunctionNotRegistered(fn)
+
+    return fn.label
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ */
+lunr.Index.prototype.toJSON = function () {
+  return {
+    version: lunr.version,
+    fields: this._fields,
+    ref: this._ref,
+    tokenizer: this.tokenizerFn.label,
+    documentStore: this.documentStore.<span class="apidocCodeKeywordSpan">toJSON</span>(),
+    tokenStore: this.tokenStore.toJSON(),
+    corpusTokens: this.corpusTokens.toJSON(),
+    pipeline: this.pipeline.toJSON()
+  }
+}
+
+/**
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lunr.Pipeline.registeredFunctions" id="apidoc.module.lunr.Pipeline.registeredFunctions">module lunr.Pipeline.registeredFunctions</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Pipeline.registeredFunctions.stemmer" id="apidoc.element.lunr.Pipeline.registeredFunctions.stemmer">
+        function <span class="apidocSignatureSpan">lunr.Pipeline.registeredFunctions.</span>stemmer
+        <span class="apidocSignatureSpan">(w)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function porterStemmer(w) {
+  var   stem,
+    suffix,
+    firstch,
+    re,
+    re2,
+    re3,
+    re4;
+
+  if (w.length &#x3c; 3) { return w; }
+
+  firstch = w.substr(0,1);
+  if (firstch == &#x22;y&#x22;) {
+    w = firstch.toUpperCase() + w.substr(1);
+  }
+
+  // Step 1a
+  re = re_1a
+  re2 = re2_1a;
+
+  if (re.test(w)) { w = w.replace(re,&#x22;$1$2&#x22;); }
+  else if (re2.test(w)) { w = w.replace(re2,&#x22;$1$2&#x22;); }
+
+  // Step 1b
+  re = re_1b;
+  re2 = re2_1b;
+  if (re.test(w)) {
+    var fp = re.exec(w);
+    re = re_mgr0;
+    if (re.test(fp[1])) {
+      re = re_1b_2;
+      w = w.replace(re,&#x22;&#x22;);
+    }
+  } else if (re2.test(w)) {
+    var fp = re2.exec(w);
+    stem = fp[1];
+    re2 = re_s_v;
+    if (re2.test(stem)) {
+      w = stem;
+      re2 = re2_1b_2;
+      re3 = re3_1b_2;
+      re4 = re4_1b_2;
+      if (re2.test(w)) {  w = w + &#x22;e&#x22;; }
+      else if (re3.test(w)) { re = re_1b_2; w = w.replace(re,&#x22;&#x22;); }
+      else if (re4.test(w)) { w = w + &#x22;e&#x22;; }
+    }
+  }
+
+  // Step 1c - replace suffix y or Y by i if preceded by a non-vowel which is not the first letter of the word (so cry -&#x3e; cri, by
+ -&#x3e; by, say -&#x3e; say)
+  re = re_1c;
+  if (re.test(w)) {
+    var fp = re.exec(w);
+    stem = fp[1];
+    w = stem + &#x22;i&#x22;;
+  }
+
+  // Step 2
+  re = re_2;
+  if (re.test(w)) {
+    var fp = re.exec(w);
+    stem = fp[1];
+    suffix = fp[2];
+    re = re_mgr0;
+    if (re.test(stem)) {
+      w = stem + step2list[suffix];
+    }
+  }
+
+  // Step 3
+  re = re_3;
+  if (re.test(w)) {
+    var fp = re.exec(w);
+    stem = fp[1];
+    suffix = fp[2];
+    re = re_mgr0;
+    if (re.test(stem)) {
+      w = stem + step3list[suffix];
+    }
+  }
+
+  // Step 4
+  re = re_4;
+  re2 = re2_4;
+  if (re.test(w)) {
+    var fp = re.exec(w);
+    stem = fp[1];
+    re = re_mgr1;
+    if (re.test(stem)) {
+      w = stem;
+    }
+  } else if (re2.test(w)) {
+    var fp = re2.exec(w);
+    stem = fp[1] + fp[2];
+    re2 = re_mgr1;
+    if (re2.test(stem)) {
+      w = stem;
+    }
+  }
+
+  // Step 5
+  re = re_5;
+  if (re.test(w)) {
+    var fp = re.exec(w);
+    stem = fp[1];
+    re = re_mgr1;
+    re2 = re_meq1;
+    re3 = re3_5;
+    if (re.test(stem) || (re2.test(stem) &#x26;&#x26; !(re3.test(stem)))) {
+      w = stem;
+    }
+  }
+
+  re = re_5_1;
+  re2 = re_mgr1;
+  if (re.test(w) &#x26;&#x26; re2.test(w)) {
+    re = re_1b_2;
+    w = w.replace(re,&#x22;&#x22;);
+  }
+
+  // and turn initial Y back to y
+
+  if (firstch == &#x22;y&#x22;) {
+    w = firstch.toLowerCase() + w.substr(1);
+  }
+
+  return w;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Pipeline.registeredFunctions.stopWordFilter" id="apidoc.element.lunr.Pipeline.registeredFunctions.stopWordFilter">
+        function <span class="apidocSignatureSpan">lunr.Pipeline.registeredFunctions.</span>stopWordFilter
+        <span class="apidocSignatureSpan">(token)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stopWordFilter = function (token) {
+  if (token &#x26;&#x26; words[token] !== token) return token
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Pipeline.registeredFunctions.trimmer" id="apidoc.element.lunr.Pipeline.registeredFunctions.trimmer">
+        function <span class="apidocSignatureSpan">lunr.Pipeline.registeredFunctions.</span>trimmer
+        <span class="apidocSignatureSpan">(token)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">trimmer = function (token) {
+  return token.replace(/^\W+/, &#x27;&#x27;).replace(/\W+$/, &#x27;&#x27;)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lunr.SortedSet" id="apidoc.module.lunr.SortedSet">module lunr.SortedSet</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.SortedSet.SortedSet" id="apidoc.element.lunr.SortedSet.SortedSet">
+        function <span class="apidocSignatureSpan">lunr.</span>SortedSet
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">SortedSet = function () {
+  this.length = 0
+  this.elements = []
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.SortedSet.load" id="apidoc.element.lunr.SortedSet.load">
+        function <span class="apidocSignatureSpan">lunr.SortedSet.</span>load
+        <span class="apidocSignatureSpan">(serialisedData)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">load = function (serialisedData) {
+  var set = new this
+
+  set.elements = serialisedData
+  set.length = serialisedData.length
+
+  return set
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+
+  var idx = new this
+
+  idx._fields = serialisedData.fields
+  idx._ref = serialisedData.ref
+
+  idx.tokenizer(lunr.tokenizer.<span class="apidocCodeKeywordSpan">load</span>(serialisedData.tokenizer))
+  idx.documentStore = lunr.Store.load(serialisedData.documentStore)
+  idx.tokenStore = lunr.TokenStore.load(serialisedData.tokenStore)
+  idx.corpusTokens = lunr.SortedSet.load(serialisedData.corpusTokens)
+  idx.pipeline = lunr.Pipeline.load(serialisedData.pipeline)
+
+  return idx
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lunr.SortedSet.prototype" id="apidoc.module.lunr.SortedSet.prototype">module lunr.SortedSet.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.SortedSet.prototype.add" id="apidoc.element.lunr.SortedSet.prototype.add">
+        function <span class="apidocSignatureSpan">lunr.SortedSet.prototype.</span>add
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">add = function () {
+  var i, element
+
+  for (i = 0; i &#x3c; arguments.length; i++) {
+    element = arguments[i]
+    if (~this.indexOf(element)) continue
+    this.elements.splice(this.locationFor(element), 0, element)
+  }
+
+  this.length = this.elements.length
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+var doc = {
+    &#x22;title&#x22;: &#x22;Twelfth-Night&#x22;,
+    &#x22;body&#x22;: &#x22;If music be the food of love, play on: Give me excess of it…&#x22;,
+    &#x22;author&#x22;: &#x22;William Shakespeare&#x22;,
+    &#x22;id&#x22;: 1
+}
+idx.<span class="apidocCodeKeywordSpan">add</span>(doc)
+```
+
+Then searching is as simple:
+
+```javascript
+idx.search(&#x22;love&#x22;)
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.SortedSet.prototype.clone" id="apidoc.element.lunr.SortedSet.prototype.clone">
+        function <span class="apidocSignatureSpan">lunr.SortedSet.prototype.</span>clone
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clone = function () {
+  var clone = new lunr.SortedSet
+
+  clone.elements = this.toArray()
+  clone.length = clone.elements.length
+
+  return clone
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  if (this.length &#x3e;= otherSet.length) {
+    longSet = this, shortSet = otherSet
+  } else {
+    longSet = otherSet, shortSet = this
+  }
+
+  unionSet = longSet.<span class="apidocCodeKeywordSpan">clone</span>()
+
+  for(var i = 0, shortSetElements = shortSet.toArray(); i &#x3c; shortSetElements.length; i++){
+    unionSet.add(shortSetElements[i])
+  }
+
+  return unionSet
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.SortedSet.prototype.forEach" id="apidoc.element.lunr.SortedSet.prototype.forEach">
+        function <span class="apidocSignatureSpan">lunr.SortedSet.prototype.</span>forEach
+        <span class="apidocSignatureSpan">(fn, ctx)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">forEach = function (fn, ctx) {
+  return this.elements.forEach(fn, ctx)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+lunr.EventEmitter.prototype.addListener = function () {
+ var args = Array.prototype.slice.call(arguments),
+     fn = args.pop(),
+     names = args
+
+ if (typeof fn !== &#x22;function&#x22;) throw new TypeError (&#x22;last argument must be a function&#x22;)
+
+ names.<span class="apidocCodeKeywordSpan">forEach</span>(function (name) {
+   if (!this.hasHandler(name)) this.events[name] = []
+   this.events[name].push(fn)
+ }, this)
+}
+
+/**
+* Removes a handler function from a specific event.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.SortedSet.prototype.indexOf" id="apidoc.element.lunr.SortedSet.prototype.indexOf">
+        function <span class="apidocSignatureSpan">lunr.SortedSet.prototype.</span>indexOf
+        <span class="apidocSignatureSpan">(elem)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">indexOf = function (elem) {
+  var start = 0,
+      end = this.elements.length,
+      sectionLength = end - start,
+      pivot = start + Math.floor(sectionLength / 2),
+      pivotElem = this.elements[pivot]
+
+  while (sectionLength &#x3e; 1) {
+    if (pivotElem === elem) return pivot
+
+    if (pivotElem &#x3c; elem) start = pivot
+    if (pivotElem &#x3e; elem) end = pivot
+
+    sectionLength = end - start
+    pivot = start + Math.floor(sectionLength / 2)
+    pivotElem = this.elements[pivot]
+  }
+
+  if (pivotElem === elem) return pivot
+
+  return -1
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @param {String} eventName The name of the event to remove this function from.
+* @param {Function} fn The function to remove from an event.
+* @memberOf EventEmitter
+*/
+lunr.EventEmitter.prototype.removeListener = function (name, fn) {
+ if (!this.hasHandler(name)) return
+
+ var fnIndex = this.events[name].<span class="apidocCodeKeywordSpan">indexOf</span>(fn)
+ this.events[name].splice(fnIndex, 1)
+
+ if (!this.events[name].length) delete this.events[name]
+}
+
+/**
+* Calls all functions bound to the given event.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.SortedSet.prototype.intersect" id="apidoc.element.lunr.SortedSet.prototype.intersect">
+        function <span class="apidocSignatureSpan">lunr.SortedSet.prototype.</span>intersect
+        <span class="apidocSignatureSpan">(otherSet)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">intersect = function (otherSet) {
+  var intersectSet = new lunr.SortedSet,
+      i = 0, j = 0,
+      a_len = this.length, b_len = otherSet.length,
+      a = this.elements, b = otherSet.elements
+
+  while (true) {
+    if (i &#x3e; a_len - 1 || j &#x3e; b_len - 1) break
+
+    if (a[i] === b[j]) {
+      intersectSet.add(a[i])
+      i++, j++
+      continue
+    }
+
+    if (a[i] &#x3c; b[j]) {
+      i++
+      continue
+    }
+
+    if (a[i] &#x3e; b[j]) {
+      j++
+      continue
+    }
+  };
+
+  return intersectSet
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      return memo.union(set)
+    }, new lunr.SortedSet)
+
+    documentSets.push(set)
+  }, this)
+
+var documentSet = documentSets.reduce(function (memo, set) {
+  return memo.<span class="apidocCodeKeywordSpan">intersect</span>(set)
+})
+
+return documentSet
+  .map(function (ref) {
+    return { ref: ref, score: queryVector.similarity(this.documentVector(ref)) }
+  }, this)
+  .sort(function (a, b) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.SortedSet.prototype.locationFor" id="apidoc.element.lunr.SortedSet.prototype.locationFor">
+        function <span class="apidocSignatureSpan">lunr.SortedSet.prototype.</span>locationFor
+        <span class="apidocSignatureSpan">(elem)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">locationFor = function (elem) {
+  var start = 0,
+      end = this.elements.length,
+      sectionLength = end - start,
+      pivot = start + Math.floor(sectionLength / 2),
+      pivotElem = this.elements[pivot]
+
+  while (sectionLength &#x3e; 1) {
+    if (pivotElem &#x3c; elem) start = pivot
+    if (pivotElem &#x3e; elem) end = pivot
+
+    sectionLength = end - start
+    pivot = start + Math.floor(sectionLength / 2)
+    pivotElem = this.elements[pivot]
+  }
+
+  if (pivotElem &#x3e; elem) return pivot
+  if (pivotElem &#x3c; elem) return pivot + 1
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*/
+lunr.SortedSet.prototype.add = function () {
+ var i, element
+
+ for (i = 0; i &#x3c; arguments.length; i++) {
+   element = arguments[i]
+   if (~this.indexOf(element)) continue
+   this.elements.splice(this.<span class="apidocCodeKeywordSpan">locationFor</span>(element), 0, element)
+ }
+
+ this.length = this.elements.length
+}
+
+/**
+* Converts this sorted set into an array.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.SortedSet.prototype.map" id="apidoc.element.lunr.SortedSet.prototype.map">
+        function <span class="apidocSignatureSpan">lunr.SortedSet.prototype.</span>map
+        <span class="apidocSignatureSpan">(fn, ctx)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">map = function (fn, ctx) {
+  return this.elements.map(fn, ctx)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @module
+* @param {String} obj The string to convert into tokens
+* @see lunr.tokenizer.separator
+* @returns {Array}
+*/
+lunr.tokenizer = function (obj) {
+ if (!arguments.length || obj == null || obj == undefined) return []
+ if (Array.isArray(obj)) return obj.<span class="apidocCodeKeywordSpan">map</span>(function (t) { return lunr.utils.asString(t).
+toLowerCase() })
+
+ return obj.toString().trim().toLowerCase().split(lunr.tokenizer.separator)
+}
+
+/**
+* The sperator used to split a string into tokens. Override this property to change the behaviour of
+* `lunr.tokenizer` behaviour when tokenizing strings. By default this splits on whitespace and hyphens.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.SortedSet.prototype.toArray" id="apidoc.element.lunr.SortedSet.prototype.toArray">
+        function <span class="apidocSignatureSpan">lunr.SortedSet.prototype.</span>toArray
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toArray = function () {
+  return this.elements.slice()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*
+* @returns {lunr.SortedSet}
+* @memberOf SortedSet
+*/
+lunr.SortedSet.prototype.clone = function () {
+ var clone = new lunr.SortedSet
+
+ clone.elements = this.<span class="apidocCodeKeywordSpan">toArray</span>()
+ clone.length = clone.elements.length
+
+ return clone
+}
+
+/**
+* Creates a new lunr.SortedSet that contains the elements in the union
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.SortedSet.prototype.toJSON" id="apidoc.element.lunr.SortedSet.prototype.toJSON">
+        function <span class="apidocSignatureSpan">lunr.SortedSet.prototype.</span>toJSON
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toJSON = function () {
+  return this.toArray()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ */
+lunr.Index.prototype.toJSON = function () {
+  return {
+    version: lunr.version,
+    fields: this._fields,
+    ref: this._ref,
+    tokenizer: this.tokenizerFn.label,
+    documentStore: this.documentStore.<span class="apidocCodeKeywordSpan">toJSON</span>(),
+    tokenStore: this.tokenStore.toJSON(),
+    corpusTokens: this.corpusTokens.toJSON(),
+    pipeline: this.pipeline.toJSON()
+  }
+}
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.SortedSet.prototype.union" id="apidoc.element.lunr.SortedSet.prototype.union">
+        function <span class="apidocSignatureSpan">lunr.SortedSet.prototype.</span>union
+        <span class="apidocSignatureSpan">(otherSet)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">union = function (otherSet) {
+  var longSet, shortSet, unionSet
+
+  if (this.length &#x3e;= otherSet.length) {
+    longSet = this, shortSet = otherSet
+  } else {
+    longSet = otherSet, shortSet = this
+  }
+
+  unionSet = longSet.clone()
+
+  for(var i = 0, shortSetElements = shortSet.toArray(); i &#x3c; shortSetElements.length; i++){
+    unionSet.add(shortSetElements[i])
+  }
+
+  return unionSet
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+          refs = Object.keys(matchingDocuments),
+          refsLen = refs.length
+
+      for (var i = 0; i &#x3c; refsLen; i++) {
+        set.add(matchingDocuments[refs[i]].ref)
+      }
+
+      return memo.<span class="apidocCodeKeywordSpan">union</span>(set)
+    }, new lunr.SortedSet)
+
+    documentSets.push(set)
+  }, this)
+
+var documentSet = documentSets.reduce(function (memo, set) {
+  return memo.intersect(set)
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lunr.Store" id="apidoc.module.lunr.Store">module lunr.Store</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Store.Store" id="apidoc.element.lunr.Store.Store">
+        function <span class="apidocSignatureSpan">lunr.</span>Store
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Store = function () {
+  this.store = {}
+  this.length = 0
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Store.load" id="apidoc.element.lunr.Store.load">
+        function <span class="apidocSignatureSpan">lunr.Store.</span>load
+        <span class="apidocSignatureSpan">(serialisedData)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">load = function (serialisedData) {
+  var store = new this
+
+  store.length = serialisedData.length
+  store.store = Object.keys(serialisedData.store).reduce(function (memo, key) {
+    memo[key] = lunr.SortedSet.load(serialisedData.store[key])
+    return memo
+  }, {})
+
+  return store
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+
+  var idx = new this
+
+  idx._fields = serialisedData.fields
+  idx._ref = serialisedData.ref
+
+  idx.tokenizer(lunr.tokenizer.<span class="apidocCodeKeywordSpan">load</span>(serialisedData.tokenizer))
+  idx.documentStore = lunr.Store.load(serialisedData.documentStore)
+  idx.tokenStore = lunr.TokenStore.load(serialisedData.tokenStore)
+  idx.corpusTokens = lunr.SortedSet.load(serialisedData.corpusTokens)
+  idx.pipeline = lunr.Pipeline.load(serialisedData.pipeline)
+
+  return idx
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lunr.Store.prototype" id="apidoc.module.lunr.Store.prototype">module lunr.Store.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Store.prototype.get" id="apidoc.element.lunr.Store.prototype.get">
+        function <span class="apidocSignatureSpan">lunr.Store.prototype.</span>get
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (id) {
+  return this.store[id]
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ */
+lunr.Index.prototype.remove = function (doc, emitEvent) {
+var docRef = doc[this._ref],
+    emitEvent = emitEvent === undefined ? true : emitEvent
+
+if (!this.documentStore.has(docRef)) return
+
+var docTokens = this.documentStore.<span class="apidocCodeKeywordSpan">get</span>(docRef)
+
+this.documentStore.remove(docRef)
+
+docTokens.forEach(function (token) {
+  this.tokenStore.remove(token, docRef)
+}, this)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Store.prototype.has" id="apidoc.element.lunr.Store.prototype.has">
+        function <span class="apidocSignatureSpan">lunr.Store.prototype.</span>has
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">has = function (id) {
+  return id in this.store
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @param {Boolean} emitEvent Whether to emit remove events, defaults to true
+ * @memberOf Index
+ */
+lunr.Index.prototype.remove = function (doc, emitEvent) {
+var docRef = doc[this._ref],
+    emitEvent = emitEvent === undefined ? true : emitEvent
+
+if (!this.documentStore.<span class="apidocCodeKeywordSpan">has</span>(docRef)) return
+
+var docTokens = this.documentStore.get(docRef)
+
+this.documentStore.remove(docRef)
+
+docTokens.forEach(function (token) {
+  this.tokenStore.remove(token, docRef)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Store.prototype.remove" id="apidoc.element.lunr.Store.prototype.remove">
+        function <span class="apidocSignatureSpan">lunr.Store.prototype.</span>remove
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">remove = function (id) {
+  if (!this.has(id)) return
+
+  delete this.store[id]
+  this.length--
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var docRef = doc[this._ref],
+      emitEvent = emitEvent === undefined ? true : emitEvent
+
+  if (!this.documentStore.has(docRef)) return
+
+  var docTokens = this.documentStore.get(docRef)
+
+  this.documentStore.<span class="apidocCodeKeywordSpan">remove</span>(docRef)
+
+  docTokens.forEach(function (token) {
+    this.tokenStore.remove(token, docRef)
+  }, this)
+
+  if (emitEvent) this.eventEmitter.emit(&#x27;remove&#x27;, doc, this)
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Store.prototype.set" id="apidoc.element.lunr.Store.prototype.set">
+        function <span class="apidocSignatureSpan">lunr.Store.prototype.</span>set
+        <span class="apidocSignatureSpan">(id, tokens)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">set = function (id, tokens) {
+  if (!this.has(id)) this.length++
+  this.store[id] = tokens
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+for (var i = 0; i &#x3c; fieldTokens.length; i++) {
+  var token = fieldTokens[i]
+  allDocumentTokens.add(token)
+  this.corpusTokens.add(token)
+}
+  }, this)
+
+  this.documentStore.<span class="apidocCodeKeywordSpan">set</span>(docRef, allDocumentTokens)
+
+  for (var i = 0; i &#x3c; allDocumentTokens.length; i++) {
+var token = allDocumentTokens.elements[i]
+var tf = 0;
+
+for (var j = 0; j &#x3c; this._fields.length; j++){
+  var field = this._fields[j]
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Store.prototype.toJSON" id="apidoc.element.lunr.Store.prototype.toJSON">
+        function <span class="apidocSignatureSpan">lunr.Store.prototype.</span>toJSON
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toJSON = function () {
+  return {
+    store: this.store,
+    length: this.length
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ */
+lunr.Index.prototype.toJSON = function () {
+  return {
+    version: lunr.version,
+    fields: this._fields,
+    ref: this._ref,
+    tokenizer: this.tokenizerFn.label,
+    documentStore: this.documentStore.<span class="apidocCodeKeywordSpan">toJSON</span>(),
+    tokenStore: this.tokenStore.toJSON(),
+    corpusTokens: this.corpusTokens.toJSON(),
+    pipeline: this.pipeline.toJSON()
+  }
+}
+
+/**
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lunr.TokenStore" id="apidoc.module.lunr.TokenStore">module lunr.TokenStore</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.TokenStore.TokenStore" id="apidoc.element.lunr.TokenStore.TokenStore">
+        function <span class="apidocSignatureSpan">lunr.</span>TokenStore
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">TokenStore = function () {
+  this.root = { docs: {} }
+  this.length = 0
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.TokenStore.load" id="apidoc.element.lunr.TokenStore.load">
+        function <span class="apidocSignatureSpan">lunr.TokenStore.</span>load
+        <span class="apidocSignatureSpan">(serialisedData)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">load = function (serialisedData) {
+  var store = new this
+
+  store.root = serialisedData.root
+  store.length = serialisedData.length
+
+  return store
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+
+  var idx = new this
+
+  idx._fields = serialisedData.fields
+  idx._ref = serialisedData.ref
+
+  idx.tokenizer(lunr.tokenizer.<span class="apidocCodeKeywordSpan">load</span>(serialisedData.tokenizer))
+  idx.documentStore = lunr.Store.load(serialisedData.documentStore)
+  idx.tokenStore = lunr.TokenStore.load(serialisedData.tokenStore)
+  idx.corpusTokens = lunr.SortedSet.load(serialisedData.corpusTokens)
+  idx.pipeline = lunr.Pipeline.load(serialisedData.pipeline)
+
+  return idx
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lunr.TokenStore.prototype" id="apidoc.module.lunr.TokenStore.prototype">module lunr.TokenStore.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.TokenStore.prototype.add" id="apidoc.element.lunr.TokenStore.prototype.add">
+        function <span class="apidocSignatureSpan">lunr.TokenStore.prototype.</span>add
+        <span class="apidocSignatureSpan">(token, doc, root)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">add = function (token, doc, root) {
+  var root = root || this.root,
+      key = token.charAt(0),
+      rest = token.slice(1)
+
+  if (!(key in root)) root[key] = {docs: {}}
+
+  if (rest.length === 0) {
+    root[key].docs[doc.ref] = doc
+    this.length += 1
+    return
+  } else {
+    return this.add(rest, doc, root[key])
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+var doc = {
+    &#x22;title&#x22;: &#x22;Twelfth-Night&#x22;,
+    &#x22;body&#x22;: &#x22;If music be the food of love, play on: Give me excess of it…&#x22;,
+    &#x22;author&#x22;: &#x22;William Shakespeare&#x22;,
+    &#x22;id&#x22;: 1
+}
+idx.<span class="apidocCodeKeywordSpan">add</span>(doc)
+```
+
+Then searching is as simple:
+
+```javascript
+idx.search(&#x22;love&#x22;)
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.TokenStore.prototype.count" id="apidoc.element.lunr.TokenStore.prototype.count">
+        function <span class="apidocSignatureSpan">lunr.TokenStore.prototype.</span>count
+        <span class="apidocSignatureSpan">(token, root)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">count = function (token, root) {
+  return Object.keys(this.get(token, root)).length
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @private
+ * @memberOf Index
+ */
+lunr.Index.prototype.idf = function (term) {
+var cacheKey = &#x22;@&#x22; + term
+if (Object.prototype.hasOwnProperty.call(this._idfCache, cacheKey)) return this._idfCache[cacheKey]
+
+var documentFrequency = this.tokenStore.<span class="apidocCodeKeywordSpan">count</span>(term),
+    idf = 1
+
+if (documentFrequency &#x3e; 0) {
+  idf = 1 + Math.log(this.documentStore.length / documentFrequency)
+}
+
+return this._idfCache[cacheKey] = idf
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.TokenStore.prototype.expand" id="apidoc.element.lunr.TokenStore.prototype.expand">
+        function <span class="apidocSignatureSpan">lunr.TokenStore.prototype.</span>expand
+        <span class="apidocSignatureSpan">(token, memo)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">expand = function (token, memo) {
+  var root = this.getNode(token),
+      docs = root.docs || {},
+      memo = memo || []
+
+  if (Object.keys(docs).length) memo.push(token)
+
+  Object.keys(root)
+    .forEach(function (key) {
+      if (key === &#x27;docs&#x27;) return
+
+      memo.concat(this.expand(token + key, memo))
+    }, this)
+
+  return memo
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (!hasSomeToken) return []
+
+  queryTokens
+    .forEach(function (token, i, tokens) {
+      var tf = 1 / tokens.length * this._fields.length * fieldBoosts,
+  self = this
+
+      var set = this.tokenStore.<span class="apidocCodeKeywordSpan">expand</span>(token).reduce(function (memo, key) {
+var pos = self.corpusTokens.indexOf(key),
+    idf = self.idf(key),
+    similarityBoost = 1,
+    set = new lunr.SortedSet
+
+// if the expanded key is not an exact match to the token then
+// penalise the score for this key by how different the key is
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.TokenStore.prototype.get" id="apidoc.element.lunr.TokenStore.prototype.get">
+        function <span class="apidocSignatureSpan">lunr.TokenStore.prototype.</span>get
+        <span class="apidocSignatureSpan">(token, root)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (token, root) {
+  return this.getNode(token, root).docs || {}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ */
+lunr.Index.prototype.remove = function (doc, emitEvent) {
+var docRef = doc[this._ref],
+    emitEvent = emitEvent === undefined ? true : emitEvent
+
+if (!this.documentStore.has(docRef)) return
+
+var docTokens = this.documentStore.<span class="apidocCodeKeywordSpan">get</span>(docRef)
+
+this.documentStore.remove(docRef)
+
+docTokens.forEach(function (token) {
+  this.tokenStore.remove(token, docRef)
+}, this)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.TokenStore.prototype.getNode" id="apidoc.element.lunr.TokenStore.prototype.getNode">
+        function <span class="apidocSignatureSpan">lunr.TokenStore.prototype.</span>getNode
+        <span class="apidocSignatureSpan">(token)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getNode = function (token) {
+  if (!token) return {}
+
+  var node = this.root
+
+  for (var i = 0; i &#x3c; token.length; i++) {
+    if (!node[token.charAt(i)]) return {}
+
+    node = node[token.charAt(i)]
+  }
+
+  return node
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ *
+ * @param {String} token The token to get the documents for.
+ * @param {Object} root An optional node at which to start.
+ * @returns {Object}
+ * @memberOf TokenStore
+ */
+lunr.TokenStore.prototype.get = function (token, root) {
+  return this.<span class="apidocCodeKeywordSpan">getNode</span>(token, root).docs || {}
+}
+
+lunr.TokenStore.prototype.count = function (token, root) {
+  return Object.keys(this.get(token, root)).length
+}
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.TokenStore.prototype.has" id="apidoc.element.lunr.TokenStore.prototype.has">
+        function <span class="apidocSignatureSpan">lunr.TokenStore.prototype.</span>has
+        <span class="apidocSignatureSpan">(token)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">has = function (token) {
+  if (!token) return false
+
+  var node = this.root
+
+  for (var i = 0; i &#x3c; token.length; i++) {
+    if (!node[token.charAt(i)]) return false
+
+    node = node[token.charAt(i)]
+  }
+
+  return true
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @param {Boolean} emitEvent Whether to emit remove events, defaults to true
+ * @memberOf Index
+ */
+lunr.Index.prototype.remove = function (doc, emitEvent) {
+var docRef = doc[this._ref],
+    emitEvent = emitEvent === undefined ? true : emitEvent
+
+if (!this.documentStore.<span class="apidocCodeKeywordSpan">has</span>(docRef)) return
+
+var docTokens = this.documentStore.get(docRef)
+
+this.documentStore.remove(docRef)
+
+docTokens.forEach(function (token) {
+  this.tokenStore.remove(token, docRef)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.TokenStore.prototype.remove" id="apidoc.element.lunr.TokenStore.prototype.remove">
+        function <span class="apidocSignatureSpan">lunr.TokenStore.prototype.</span>remove
+        <span class="apidocSignatureSpan">(token, ref)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">remove = function (token, ref) {
+  if (!token) return
+  var node = this.root
+
+  for (var i = 0; i &#x3c; token.length; i++) {
+    if (!(token.charAt(i) in node)) return
+    node = node[token.charAt(i)]
+  }
+
+  delete node.docs[ref]
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var docRef = doc[this._ref],
+      emitEvent = emitEvent === undefined ? true : emitEvent
+
+  if (!this.documentStore.has(docRef)) return
+
+  var docTokens = this.documentStore.get(docRef)
+
+  this.documentStore.<span class="apidocCodeKeywordSpan">remove</span>(docRef)
+
+  docTokens.forEach(function (token) {
+    this.tokenStore.remove(token, docRef)
+  }, this)
+
+  if (emitEvent) this.eventEmitter.emit(&#x27;remove&#x27;, doc, this)
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.TokenStore.prototype.toJSON" id="apidoc.element.lunr.TokenStore.prototype.toJSON">
+        function <span class="apidocSignatureSpan">lunr.TokenStore.prototype.</span>toJSON
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toJSON = function () {
+  return {
+    root: this.root,
+    length: this.length
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ */
+lunr.Index.prototype.toJSON = function () {
+  return {
+    version: lunr.version,
+    fields: this._fields,
+    ref: this._ref,
+    tokenizer: this.tokenizerFn.label,
+    documentStore: this.documentStore.<span class="apidocCodeKeywordSpan">toJSON</span>(),
+    tokenStore: this.tokenStore.toJSON(),
+    corpusTokens: this.corpusTokens.toJSON(),
+    pipeline: this.pipeline.toJSON()
+  }
+}
+
+/**
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lunr.Vector" id="apidoc.module.lunr.Vector">module lunr.Vector</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Vector.Vector" id="apidoc.element.lunr.Vector.Vector">
+        function <span class="apidocSignatureSpan">lunr.</span>Vector
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Vector = function () {
+  this._magnitude = null
+  this.list = undefined
+  this.length = 0
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Vector.Node" id="apidoc.element.lunr.Vector.Node">
+        function <span class="apidocSignatureSpan">lunr.Vector.</span>Node
+        <span class="apidocSignatureSpan">(idx, val, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Node = function (idx, val, next) {
+  this.idx = idx
+  this.val = val
+  this.next = next
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lunr.Vector.prototype" id="apidoc.module.lunr.Vector.prototype">module lunr.Vector.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Vector.prototype.dot" id="apidoc.element.lunr.Vector.prototype.dot">
+        function <span class="apidocSignatureSpan">lunr.Vector.prototype.</span>dot
+        <span class="apidocSignatureSpan">(otherVector)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dot = function (otherVector) {
+  var node = this.list,
+      otherNode = otherVector.list,
+      dotProduct = 0
+
+  while (node &#x26;&#x26; otherNode) {
+    if (node.idx &#x3c; otherNode.idx) {
+      node = node.next
+    } else if (node.idx &#x3e; otherNode.idx) {
+      otherNode = otherNode.next
+    } else {
+      dotProduct += node.val * otherNode.val
+      node = node.next
+      otherNode = otherNode.next
+    }
+  }
+
+  return dotProduct
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ *
+ * @param {lunr.Vector} otherVector The other vector to calculate the
+ * similarity with.
+ * @returns {Number}
+ * @memberOf Vector
+ */
+lunr.Vector.prototype.similarity = function (otherVector) {
+  return this.<span class="apidocCodeKeywordSpan">dot</span>(otherVector) / (this.magnitude() * otherVector.magnitude())
+}
+/*!
+ * lunr.SortedSet
+ * Copyright (C) 2017 Oliver Nightingale
+ */
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Vector.prototype.insert" id="apidoc.element.lunr.Vector.prototype.insert">
+        function <span class="apidocSignatureSpan">lunr.Vector.prototype.</span>insert
+        <span class="apidocSignatureSpan">(idx, val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">insert = function (idx, val) {
+  this._magnitude = undefined;
+  var list = this.list
+
+  if (!list) {
+    this.list = new lunr.Vector.Node (idx, val, list)
+    return this.length++
+  }
+
+  if (idx &#x3c; list.idx) {
+    this.list = new lunr.Vector.Node (idx, val, list)
+    return this.length++
+  }
+
+  var prev = list,
+      next = list.next
+
+  while (next != undefined) {
+    if (idx &#x3c; next.idx) {
+      prev.next = new lunr.Vector.Node (idx, val, next)
+      return this.length++
+    }
+
+    prev = next, next = next.next
+  }
+
+  prev.next = new lunr.Vector.Node (idx, val, next)
+  return this.length++
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var diff = Math.max(3, key.length - token.length)
+  similarityBoost = 1 / Math.log(diff)
+}
+
+// calculate the query tf-idf score for this token
+// applying an similarityBoost to ensure exact matches
+// these rank higher than expanded terms
+if (pos &#x3e; -1) queryVector.<span class="apidocCodeKeywordSpan">insert</span>(pos, tf * idf * similarityBoost)
+
+// add all the documents that have this key into a set
+// ensuring that the type of key is preserved
+var matchingDocuments = self.tokenStore.get(key),
+    refs = Object.keys(matchingDocuments),
+    refsLen = refs.length
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Vector.prototype.magnitude" id="apidoc.element.lunr.Vector.prototype.magnitude">
+        function <span class="apidocSignatureSpan">lunr.Vector.prototype.</span>magnitude
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">magnitude = function () {
+  if (this._magnitude) return this._magnitude
+  var node = this.list,
+      sumOfSquares = 0,
+      val
+
+  while (node) {
+    val = node.val
+    sumOfSquares += val * val
+    node = node.next
+  }
+
+  return this._magnitude = Math.sqrt(sumOfSquares)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ *
+ * @param {lunr.Vector} otherVector The other vector to calculate the
+ * similarity with.
+ * @returns {Number}
+ * @memberOf Vector
+ */
+lunr.Vector.prototype.similarity = function (otherVector) {
+  return this.dot(otherVector) / (this.<span class="apidocCodeKeywordSpan">magnitude</span>() * otherVector.magnitude())
+}
+/*!
+ * lunr.SortedSet
+ * Copyright (C) 2017 Oliver Nightingale
+ */
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.Vector.prototype.similarity" id="apidoc.element.lunr.Vector.prototype.similarity">
+        function <span class="apidocSignatureSpan">lunr.Vector.prototype.</span>similarity
+        <span class="apidocSignatureSpan">(otherVector)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">similarity = function (otherVector) {
+  return this.dot(otherVector) / (this.magnitude() * otherVector.magnitude())
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  var documentSet = documentSets.reduce(function (memo, set) {
+    return memo.intersect(set)
+  })
+
+  return documentSet
+    .map(function (ref) {
+      return { ref: ref, score: queryVector.<span class="apidocCodeKeywordSpan">similarity</span>(this.documentVector(ref)) }
+    }, this)
+    .sort(function (a, b) {
+      return b.score - a.score
+    })
+}
+
+/**
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lunr.tokenizer" id="apidoc.module.lunr.tokenizer">module lunr.tokenizer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.tokenizer.tokenizer" id="apidoc.element.lunr.tokenizer.tokenizer">
+        function <span class="apidocSignatureSpan">lunr.</span>tokenizer
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">tokenizer = function (obj) {
+  if (!arguments.length || obj == null || obj == undefined) return []
+  if (Array.isArray(obj)) return obj.map(function (t) { return lunr.utils.asString(t).toLowerCase() })
+
+  return obj.toString().trim().toLowerCase().split(lunr.tokenizer.separator)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+
+  var idx = new this
+
+  idx._fields = serialisedData.fields
+  idx._ref = serialisedData.ref
+
+  idx.<span class="apidocCodeKeywordSpan">tokenizer</span>(lunr.tokenizer.load(serialisedData.tokenizer))
+  idx.documentStore = lunr.Store.load(serialisedData.documentStore)
+  idx.tokenStore = lunr.TokenStore.load(serialisedData.tokenStore)
+  idx.corpusTokens = lunr.SortedSet.load(serialisedData.corpusTokens)
+  idx.pipeline = lunr.Pipeline.load(serialisedData.pipeline)
+
+  return idx
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.tokenizer.load" id="apidoc.element.lunr.tokenizer.load">
+        function <span class="apidocSignatureSpan">lunr.tokenizer.</span>load
+        <span class="apidocSignatureSpan">(label)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">load = function (label) {
+  var fn = this.registeredFunctions[label]
+
+  if (!fn) {
+    throw new Error(&#x27;Cannot load un-registered function: &#x27; + label)
+  }
+
+  return fn
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+
+  var idx = new this
+
+  idx._fields = serialisedData.fields
+  idx._ref = serialisedData.ref
+
+  idx.tokenizer(lunr.tokenizer.<span class="apidocCodeKeywordSpan">load</span>(serialisedData.tokenizer))
+  idx.documentStore = lunr.Store.load(serialisedData.documentStore)
+  idx.tokenStore = lunr.TokenStore.load(serialisedData.tokenStore)
+  idx.corpusTokens = lunr.SortedSet.load(serialisedData.corpusTokens)
+  idx.pipeline = lunr.Pipeline.load(serialisedData.pipeline)
+
+  return idx
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.tokenizer.registerFunction" id="apidoc.element.lunr.tokenizer.registerFunction">
+        function <span class="apidocSignatureSpan">lunr.tokenizer.</span>registerFunction
+        <span class="apidocSignatureSpan">(fn, label)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">registerFunction = function (fn, label) {
+  if (label in this.registeredFunctions) {
+    lunr.utils.warn(&#x27;Overwriting existing tokenizer: &#x27; + label)
+  }
+
+  fn.label = label
+  this.registeredFunctions[label] = fn
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+   return w;
+ };
+
+ return porterStemmer;
+})();
+
+lunr.Pipeline.<span class="apidocCodeKeywordSpan">registerFunction</span>(lunr.stemmer, &#x27;stemmer&#x27;)
+/*!
+* lunr.stopWordFilter
+* Copyright (C) 2017 Oliver Nightingale
+*/
+
+/**
+* lunr.generateStopWordFilter builds a stopWordFilter function from the provided
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lunr.tokenizer.registeredFunctions" id="apidoc.module.lunr.tokenizer.registeredFunctions">module lunr.tokenizer.registeredFunctions</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.tokenizer.registeredFunctions.default" id="apidoc.element.lunr.tokenizer.registeredFunctions.default">
+        function <span class="apidocSignatureSpan">lunr.tokenizer.registeredFunctions.</span>default
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">default = function (obj) {
+  if (!arguments.length || obj == null || obj == undefined) return []
+  if (Array.isArray(obj)) return obj.map(function (t) { return lunr.utils.asString(t).toLowerCase() })
+
+  return obj.toString().trim().toLowerCase().split(lunr.tokenizer.separator)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lunr.utils" id="apidoc.module.lunr.utils">module lunr.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.utils.asString" id="apidoc.element.lunr.utils.asString">
+        function <span class="apidocSignatureSpan">lunr.utils.</span>asString
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">asString = function (obj) {
+  if (obj === void 0 || obj === null) {
+    return &#x22;&#x22;
+  } else {
+    return obj.toString()
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @module
+* @param {String} obj The string to convert into tokens
+* @see lunr.tokenizer.separator
+* @returns {Array}
+*/
+lunr.tokenizer = function (obj) {
+ if (!arguments.length || obj == null || obj == undefined) return []
+ if (Array.isArray(obj)) return obj.map(function (t) { return lunr.utils.<span class="apidocCodeKeywordSpan">asString</span>(t).
+toLowerCase() })
+
+ return obj.toString().trim().toLowerCase().split(lunr.tokenizer.separator)
+}
+
+/**
+* The sperator used to split a string into tokens. Override this property to change the behaviour of
+* `lunr.tokenizer` behaviour when tokenizing strings. By default this splits on whitespace and hyphens.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lunr.utils.warn" id="apidoc.element.lunr.utils.warn">
+        function <span class="apidocSignatureSpan">lunr.utils.</span>warn
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">warn = function (message) {
+  if (global.console &#x26;&#x26; console.warn) {
+    console.warn(message)
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*
+* @param {String} message The message to be printed.
+* @memberOf Utils
+*/
+lunr.utils.warn = (function (global) {
+ return function (message) {
+   if (global.console &#x26;&#x26; console.warn) {
+     console.<span class="apidocCodeKeywordSpan">warn</span>(message)
+   }
+ }
+})(this)
+
+/**
+* Convert an object to a string.
+*
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
