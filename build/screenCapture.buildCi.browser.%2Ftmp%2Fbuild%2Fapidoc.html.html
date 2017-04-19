@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="http://lunrjs.com"
-
-    >lunr (v2.0.2)</a>
+    <a href="http://lunrjs.com">lunr (v2.0.2)</a>
 </h1>
 <h4>Simple full-text search in your browser.</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.lunr">module lunr</a><ol>
 
@@ -1287,7 +1280,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">Builder = function () {
-  this._ref = &#x22;id&#x22;
+  this._ref = "id"
   this._fields = []
   this.invertedIndex = Object.create(null)
   this.documentTermFrequencies = {}
@@ -1402,7 +1395,7 @@ var query = new lunr.<span class="apidocCodeKeywordSpan">Query</span>(this.field
 
 fn.call(query, query)
 
-for (var i = 0; i &#x3c; query.clauses.length; i++) {
+for (var i = 0; i &lt; query.clauses.length; i++) {
   /*
 ...</pre></li>
     </ul>
@@ -1436,7 +1429,7 @@ for (var i = 0; i &#x3c; query.clauses.length; i++) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">QueryParseError = function (message, start, end) {
-  this.name = &#x22;QueryParseError&#x22;
+  this.name = "QueryParseError"
   this.message = message
   this.start = start
   this.end = end
@@ -1488,7 +1481,7 @@ lunr.Index.prototype.search = function (queryString) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">Token = function (str, metadata) {
-  this.str = str || &#x22;&#x22;
+  this.str = str || ""
   this.metadata = metadata || {}
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
@@ -1537,7 +1530,7 @@ var str = obj.toString().trim().toLowerCase(),
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">TokenSet.Builder = function () {
-  this.previousWord = &#x22;&#x22;
+  this.previousWord = ""
   this.root = new lunr.TokenSet
   this.uncheckedNodes = []
   this.minimizedNodes = {}
@@ -1561,7 +1554,7 @@ var str = obj.toString().trim().toLowerCase(),
     <li>example usage<pre class="apidocCodePre">...
 }
 
-for (var i = 0; i &#x3c; serializedVectors.length; i++, documentCount++) {
+for (var i = 0; i &lt; serializedVectors.length; i++, documentCount++) {
   var tuple = serializedVectors[i],
       ref = tuple[0],
       elements = tuple[1]
@@ -1569,7 +1562,7 @@ for (var i = 0; i &#x3c; serializedVectors.length; i++, documentCount++) {
   documentVectors[ref] = new lunr.<span class="apidocCodeKeywordSpan">Vector</span>(elements)
 }
 
-for (var i = 0; i &#x3c; serializedInvertedIndex.length; i++) {
+for (var i = 0; i &lt; serializedInvertedIndex.length; i++) {
   var tuple = serializedInvertedIndex[i],
       term = tuple[0],
       posting = tuple[1]
@@ -1592,7 +1585,7 @@ for (var i = 0; i &#x3c; serializedInvertedIndex.length; i++) {
   }, {})
 
   return function (token) {
-    if (token &#x26;&#x26; words[token.toString()] !== token.toString()) return token
+    if (token &amp;&amp; words[token.toString()] !== token.toString()) return token
   }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
@@ -1604,13 +1597,13 @@ for (var i = 0; i &#x3c; serializedInvertedIndex.length; i++) {
  * @see {@link lunr.Pipeline}
  */
 lunr.stopWordFilter = lunr.<span class="apidocCodeKeywordSpan">generateStopWordFilter</span>([
-&#x27;a&#x27;,
-&#x27;able&#x27;,
-&#x27;about&#x27;,
-&#x27;across&#x27;,
-&#x27;after&#x27;,
-&#x27;all&#x27;,
-&#x27;almost&#x27;,
+'a',
+'able',
+'about',
+'across',
+'after',
+'all',
+'almost',
 ...</pre></li>
     </ul>
 
@@ -1627,7 +1620,7 @@ lunr.stopWordFilter = lunr.<span class="apidocCodeKeywordSpan">generateStopWordF
   var documentsWithTerm = 0
 
   for (var fieldName in posting) {
-    if (fieldName == &#x27;_index&#x27;) continue // Ignore the term index, its not a field
+    if (fieldName == '_index') continue // Ignore the term index, its not a field
     documentsWithTerm += Object.keys(posting[fieldName]).length
   }
 
@@ -1670,9 +1663,9 @@ tf)
 
 
 
-suite(&#x27;lunr.stemmer&#x27;, function () {
-  this.add(&#x27;#call&#x27;, function () {
-    for (var i = 0; i &#x3c; words.length; i++) {
+suite('lunr.stemmer', function () {
+  this.add('#call', function () {
+    for (var i = 0; i &lt; words.length; i++) {
       lunr.<span class="apidocCodeKeywordSpan">stemmer</span>(new lunr.Token (words[i]))
     }
   })
@@ -1690,7 +1683,7 @@ suite(&#x27;lunr.stemmer&#x27;, function () {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">stopWordFilter = function (token) {
-  if (token &#x26;&#x26; words[token.toString()] !== token.toString()) return token
+  if (token &amp;&amp; words[token.toString()] !== token.toString()) return token
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1719,13 +1712,13 @@ suite(&#x27;lunr.stemmer&#x27;, function () {
       len = str.length,
       tokens = []
 
-  for (var sliceEnd = 0, sliceStart = 0; sliceEnd &#x3c;= len; sliceEnd++) {
+  for (var sliceEnd = 0, sliceStart = 0; sliceEnd &lt;= len; sliceEnd++) {
     var char = str.charAt(sliceEnd),
         sliceLength = sliceEnd - sliceStart
 
     if ((char.match(lunr.tokenizer.separator) || sliceEnd == len)) {
 
-      if (sliceLength &#x3e; 0) {
+      if (sliceLength &gt; 0) {
         tokens.push(
           new lunr.Token (str.slice(sliceStart, sliceEnd), {
             position: [sliceStart, sliceLength],
@@ -1746,7 +1739,7 @@ suite(&#x27;lunr.stemmer&#x27;, function () {
   this.documentTermFrequencies[docRef] = documentTerms
   this.documentLengths[docRef] = 0
 
-  for (var i = 0; i &#x3c; this._fields.length; i++) {
+  for (var i = 0; i &lt; this._fields.length; i++) {
 var fieldName = this._fields[i],
     field = doc[fieldName],
     tokens = this.<span class="apidocCodeKeywordSpan">tokenizer</span>(field),
@@ -1756,7 +1749,7 @@ var fieldName = this._fields[i],
 this.documentLengths[docRef] += terms.length
 
 // calculate term frequencies for this field
-for (var j = 0; j &#x3c; terms.length; j++) {
+for (var j = 0; j &lt; terms.length; j++) {
 ...</pre></li>
     </ul>
 
@@ -1771,7 +1764,7 @@ for (var j = 0; j &#x3c; terms.length; j++) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">trimmer = function (token) {
   return token.update(function (s) {
-    return s.replace(/^\W+/, &#x27;&#x27;).replace(/\W+$/, &#x27;&#x27;)
+    return s.replace(/^\W+/, '').replace(/\W+$/, '')
   })
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -1820,7 +1813,7 @@ for (var j = 0; j &#x3c; terms.length; j++) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">Builder = function () {
-  this._ref = &#x22;id&#x22;
+  this._ref = "id"
   this._fields = []
   this.invertedIndex = Object.create(null)
   this.documentTermFrequencies = {}
@@ -1859,7 +1852,7 @@ for (var j = 0; j &#x3c; terms.length; j++) {
   this.documentTermFrequencies[docRef] = documentTerms
   this.documentLengths[docRef] = 0
 
-  for (var i = 0; i &#x3c; this._fields.length; i++) {
+  for (var i = 0; i &lt; this._fields.length; i++) {
     var fieldName = this._fields[i],
         field = doc[fieldName],
         tokens = this.tokenizer(field),
@@ -1869,7 +1862,7 @@ for (var j = 0; j &#x3c; terms.length; j++) {
     this.documentLengths[docRef] += terms.length
 
     // calculate term frequencies for this field
-    for (var j = 0; j &#x3c; terms.length; j++) {
+    for (var j = 0; j &lt; terms.length; j++) {
       var term = terms[j]
 
       if (documentTerms[term] == undefined) {
@@ -1879,13 +1872,13 @@ for (var j = 0; j &#x3c; terms.length; j++) {
       documentTerms[term] += 1
 
       // add to inverted index
-      // create an initial posting if one doesn&#x27;t exist
+      // create an initial posting if one doesn't exist
       if (this.invertedIndex[term] == undefined) {
         var posting = Object.create(null)
-        posting[&#x22;_index&#x22;] = this.termIndex
+        posting["_index"] = this.termIndex
         this.termIndex += 1
 
-        for (var k = 0; k &#x3c; this._fields.length; k++) {
+        for (var k = 0; k &lt; this._fields.length; k++) {
           posting[this._fields[k]] = Object.create(null)
         }
 
@@ -1899,7 +1892,7 @@ for (var j = 0; j &#x3c; terms.length; j++) {
 
       // store all whitelisted metadata about this token in the
       // inverted index
-      for (var l = 0; l &#x3c; this.metadataWhitelist.length; l++) {
+      for (var l = 0; l &lt; this.metadataWhitelist.length; l++) {
         var metadataKey = this.metadataWhitelist[l],
             metadata = term.metadata[metadataKey]
 
@@ -1918,14 +1911,14 @@ A very simple search index can be created using the following:
 
 ```javascript
 var idx = lunr(function () {
-  this.field(&#x27;title&#x27;)
-  this.field(&#x27;body&#x27;)
+  this.field('title')
+  this.field('body')
 
   this.<span class="apidocCodeKeywordSpan">add</span>({
-    &#x22;title&#x22;: &#x22;Twelfth-Night&#x22;,
-    &#x22;body&#x22;: &#x22;If music be the food of love, play on: Give me excess of it…&#x22;,
-    &#x22;author&#x22;: &#x22;William Shakespeare&#x22;,
-    &#x22;id&#x22;: &#x22;1&#x22;
+    "title": "Twelfth-Night",
+    "body": "If music be the food of love, play on: Give me excess of itâ€¦",
+    "author": "William Shakespeare",
+    "id": "1"
   })
 })
 ```
@@ -1942,9 +1935,9 @@ var idx = lunr(function () {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">b = function (number) {
-  if (number &#x3c; 0) {
+  if (number &lt; 0) {
     this._b = 0
-  } else if (number &#x3e; 1) {
+  } else if (number &gt; 1) {
     this._b = 1
   } else {
     this._b = number
@@ -1990,7 +1983,7 @@ var idx = lunr(function () {
  return builder.<span class="apidocCodeKeywordSpan">build</span>()
 }
 
-lunr.version = &#x22;2.0.2&#x22;
+lunr.version = "2.0.2"
 /*!
 * lunr.utils
 * Copyright (C) 2017 Oliver Nightingale
@@ -2013,7 +2006,7 @@ lunr.version = &#x22;2.0.2&#x22;
       numberOfDocuments = documentRefs.length,
       allDocumentsLength = 0
 
-  for (var i = 0; i &#x3c; numberOfDocuments; i++) {
+  for (var i = 0; i &lt; numberOfDocuments; i++) {
     var documentRef = documentRefs[i]
     allDocumentsLength += this.documentLengths[documentRef]
   }
@@ -2053,7 +2046,7 @@ return new lunr.Index({
       docRefs = Object.keys(this.documentTermFrequencies),
       docRefsLength = docRefs.length
 
-  for (var i = 0; i &#x3c; docRefsLength; i++) {
+  for (var i = 0; i &lt; docRefsLength; i++) {
     var docRef = docRefs[i],
         documentLength = this.documentLengths[docRef],
         documentVector = new lunr.Vector,
@@ -2061,7 +2054,7 @@ return new lunr.Index({
         terms = Object.keys(termFrequencies),
         termsLength = terms.length
 
-    for (var j = 0; j &#x3c; termsLength; j++) {
+    for (var j = 0; j &lt; termsLength; j++) {
       var term = terms[j],
           tf = termFrequencies[term],
           termIndex = this.invertedIndex[term]._index,
@@ -2073,7 +2066,7 @@ return new lunr.Index({
           // Reducing the precision so that the vectors take up less
           // space when serialised. Doing it now so that they behave
           // the same before and after serialisation. Also, this is
-          // the fastest approach to reducing a number&#x27;s precision in
+          // the fastest approach to reducing a number's precision in
           // JavaScript.
 
       documentVector.insert(termIndex, scoreWithPrecision)
@@ -2156,14 +2149,14 @@ A very simple search index can be created using the following:
 
 ```javascript
 var idx = lunr(function () {
-this.<span class="apidocCodeKeywordSpan">field</span>(&#x27;title&#x27;)
-this.field(&#x27;body&#x27;)
+this.<span class="apidocCodeKeywordSpan">field</span>('title')
+this.field('body')
 
 this.add({
-  &#x22;title&#x22;: &#x22;Twelfth-Night&#x22;,
-  &#x22;body&#x22;: &#x22;If music be the food of love, play on: Give me excess of it…&#x22;,
-  &#x22;author&#x22;: &#x22;William Shakespeare&#x22;,
-  &#x22;id&#x22;: &#x22;1&#x22;
+  "title": "Twelfth-Night",
+  "body": "If music be the food of love, play on: Give me excess of itâ€¦",
+  "author": "William Shakespeare",
+  "id": "1"
 ...</pre></li>
     </ul>
 
@@ -2200,9 +2193,9 @@ this.add({
 *
 * @example
 * var idx = lunr(function () {
-*   this.field(&#x27;title&#x27;)
-*   this.field(&#x27;body&#x27;)
-*   this.<span class="apidocCodeKeywordSpan">ref</span>(&#x27;id&#x27;)
+*   this.field('title')
+*   this.field('body')
+*   this.<span class="apidocCodeKeywordSpan">ref</span>('id')
 *
 *   documents.forEach(function (doc) {
 *     this.add(doc)
@@ -2294,11 +2287,11 @@ this.add({
       pipeline = lunr.Pipeline.load(serializedIndex.pipeline)
 
   if (serializedIndex.version != lunr.version) {
-    lunr.utils.warn(&#x22;Version mismatch when loading serialised index. Current version of lunr &#x27;&#x22; + lunr.version + &#x22;&#x27; does not match
- serialized index &#x27;&#x22; + serializedIndex.version + &#x22;&#x27;&#x22;)
+    lunr.utils.warn("Version mismatch when loading serialised index. Current version of lunr '" + lunr.version + "' does not match
+ serialized index '" + serializedIndex.version + "'")
   }
 
-  for (var i = 0; i &#x3c; serializedVectors.length; i++, documentCount++) {
+  for (var i = 0; i &lt; serializedVectors.length; i++, documentCount++) {
     var tuple = serializedVectors[i],
         ref = tuple[0],
         elements = tuple[1]
@@ -2306,7 +2299,7 @@ this.add({
     documentVectors[ref] = new lunr.Vector(elements)
   }
 
-  for (var i = 0; i &#x3c; serializedInvertedIndex.length; i++) {
+  for (var i = 0; i &lt; serializedInvertedIndex.length; i++) {
     var tuple = serializedInvertedIndex[i],
         term = tuple[0],
         posting = tuple[1]
@@ -2341,11 +2334,11 @@ var attrs = {},
     pipeline = lunr.Pipeline.<span class="apidocCodeKeywordSpan">load</span>(serializedIndex.pipeline)
 
 if (serializedIndex.version != lunr.version) {
-  lunr.utils.warn(&#x22;Version mismatch when loading serialised index. Current version of lunr &#x27;&#x22; + lunr.version + &#
-x22;&#x27; does not match serialized index &#x27;&#x22; + serializedIndex.version + &#x22;&#x27;&#x22;)
+  lunr.utils.warn("Version mismatch when loading serialised index. Current version of lunr '" + lunr.version + &amp;#
+x22;' does not match serialized index '" + serializedIndex.version + "'")
 }
 
-for (var i = 0; i &#x3c; serializedVectors.length; i++, documentCount++) {
+for (var i = 0; i &lt; serializedVectors.length; i++, documentCount++) {
   var tuple = serializedVectors[i],
 ...</pre></li>
     </ul>
@@ -2378,7 +2371,7 @@ for (var i = 0; i &#x3c; serializedVectors.length; i++, documentCount++) {
 
   fn.call(query, query)
 
-  for (var i = 0; i &#x3c; query.clauses.length; i++) {
+  for (var i = 0; i &lt; query.clauses.length; i++) {
 <span class="apidocCodeCommentSpan">    /*
      * Unless the pipeline has been disabled for this term, which is
      * the case for terms with wildcards, we need to pass the clause
@@ -2396,7 +2389,7 @@ for (var i = 0; i &#x3c; serializedVectors.length; i++, documentCount++) {
       terms = [clause.term]
     }
 
-    for (var m = 0; m &#x3c; terms.length; m++) {
+    for (var m = 0; m &lt; terms.length; m++) {
       var term = terms[m]
 
       /*
@@ -2415,7 +2408,7 @@ for (var i = 0; i &#x3c; serializedVectors.length; i++, documentCount++) {
       var termTokenSet = lunr.TokenSet.fromClause(clause),
           expandedTerms = this.tokenSet.intersect(termTokenSet).toArray()
 
-      for (var j = 0; j &#x3c; expandedTerms.length; j++) {
+      for (var j = 0; j &lt; expandedTerms.length; j++) {
         /*
          * For each term calculate the score as the term relates to the
          * query using the same calculation used to score documents during
@@ -2442,7 +2435,7 @@ for (var i = 0; i &#x3c; serializedVectors.length; i++, documentCount++) {
          */
         queryVector.insert(termIndex, score * clause.boost)
 
-        for (var k = 0; k &#x3c; clause.fields.length; k++) {
+        for (var k = 0; k &lt; clause.fields.length; k++) {
           /*
            * For each field that this query term is scoped by (by default
            * all fields are in scope) we need to get all the document refs
@@ -2455,7 +2448,7 @@ for (var i = 0; i &#x3c; serializedVectors.length; i++, documentCount++) {
               fieldPosting = posting[field],
               matchingDocumentRefs = Object.keys(fieldPosting)
 
-          for (var l = 0; l &#x3c; matchingDocumentRefs.length; l++) {
+          for (var l = 0; l &lt; matchingDocumentRefs.length; l++) {
             /*
              * All metadata for this term/field/document triple
              * are then extracted and collected into an instance
@@ -2511,7 +2504,7 @@ lunr.Index.prototype.search = function (queryString) {
 Then searching is as simple:
 
 ```javascript
-idx.<span class="apidocCodeKeywordSpan">search</span>(&#x22;love&#x22;)
+idx.<span class="apidocCodeKeywordSpan">search</span>("love")
 ```
 
 This returns a list of matching documents with a score of how closely they match the search query as well as any associated metadata
@@ -2613,7 +2606,7 @@ return {
     <li>description and source-code<pre class="apidocCodePre">combine = function (otherMatchData) {
   var terms = Object.keys(otherMatchData.metadata)
 
-  for (var i = 0; i &#x3c; terms.length; i++) {
+  for (var i = 0; i &lt; terms.length; i++) {
     var term = terms[i],
         fields = Object.keys(otherMatchData.metadata[term])
 
@@ -2621,7 +2614,7 @@ return {
       this.metadata[term] = {}
     }
 
-    for (var j = 0; j &#x3c; fields.length; j++) {
+    for (var j = 0; j &lt; fields.length; j++) {
       var field = fields[j],
           keys = Object.keys(otherMatchData.metadata[term][field])
 
@@ -2629,7 +2622,7 @@ return {
         this.metadata[term][field] = {}
       }
 
-      for (var k = 0; k &#x3c; keys.length; k++) {
+      for (var k = 0; k &lt; keys.length; k++) {
         var key = keys[k]
 
         if (this.metadata[term][field][key] == undefined) {
@@ -2699,7 +2692,7 @@ return {
     if (fn) {
       pipeline.add(fn)
     } else {
-      throw new Error(&#x27;Cannot load unregistered function: &#x27; + fnName)
+      throw new Error('Cannot load unregistered function: ' + fnName)
     }
   })
 
@@ -2716,11 +2709,11 @@ var attrs = {},
     pipeline = lunr.Pipeline.<span class="apidocCodeKeywordSpan">load</span>(serializedIndex.pipeline)
 
 if (serializedIndex.version != lunr.version) {
-  lunr.utils.warn(&#x22;Version mismatch when loading serialised index. Current version of lunr &#x27;&#x22; + lunr.version + &#
-x22;&#x27; does not match serialized index &#x27;&#x22; + serializedIndex.version + &#x22;&#x27;&#x22;)
+  lunr.utils.warn("Version mismatch when loading serialised index. Current version of lunr '" + lunr.version + &amp;#
+x22;' does not match serialized index '" + serializedIndex.version + "'")
 }
 
-for (var i = 0; i &#x3c; serializedVectors.length; i++, documentCount++) {
+for (var i = 0; i &lt; serializedVectors.length; i++, documentCount++) {
   var tuple = serializedVectors[i],
 ...</pre></li>
     </ul>
@@ -2736,7 +2729,7 @@ for (var i = 0; i &#x3c; serializedVectors.length; i++, documentCount++) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">registerFunction = function (fn, label) {
   if (label in this.registeredFunctions) {
-    lunr.utils.warn(&#x27;Overwriting existing registered function: &#x27; + label)
+    lunr.utils.warn('Overwriting existing registered function: ' + label)
   }
 
   fn.label = label
@@ -2750,7 +2743,7 @@ for (var i = 0; i &#x3c; serializedVectors.length; i++, documentCount++) {
  }
 })();
 
-lunr.Pipeline.<span class="apidocCodeKeywordSpan">registerFunction</span>(lunr.stemmer, &#x27;stemmer&#x27;)
+lunr.Pipeline.<span class="apidocCodeKeywordSpan">registerFunction</span>(lunr.stemmer, 'stemmer')
 /*!
 * lunr.stopWordFilter
 * Copyright (C) 2017 Oliver Nightingale
@@ -2771,10 +2764,10 @@ lunr.Pipeline.<span class="apidocCodeKeywordSpan">registerFunction</span>(lunr.s
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">warnIfFunctionNotRegistered = function (fn) {
-  var isRegistered = fn.label &#x26;&#x26; (fn.label in this.registeredFunctions)
+  var isRegistered = fn.label &amp;&amp; (fn.label in this.registeredFunctions)
 
   if (!isRegistered) {
-    lunr.utils.warn(&#x27;Function is not registered with pipeline. This may cause problems when serialising the index.\n&#x27;, fn)
+    lunr.utils.warn('Function is not registered with pipeline. This may cause problems when serialising the index.\n', fn)
   }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
@@ -2825,14 +2818,14 @@ A very simple search index can be created using the following:
 
 ```javascript
 var idx = lunr(function () {
-  this.field(&#x27;title&#x27;)
-  this.field(&#x27;body&#x27;)
+  this.field('title')
+  this.field('body')
 
   this.<span class="apidocCodeKeywordSpan">add</span>({
-    &#x22;title&#x22;: &#x22;Twelfth-Night&#x22;,
-    &#x22;body&#x22;: &#x22;If music be the food of love, play on: Give me excess of it…&#x22;,
-    &#x22;author&#x22;: &#x22;William Shakespeare&#x22;,
-    &#x22;id&#x22;: &#x22;1&#x22;
+    "title": "Twelfth-Night",
+    "body": "If music be the food of love, play on: Give me excess of itâ€¦",
+    "author": "William Shakespeare",
+    "id": "1"
   })
 })
 ```
@@ -2853,7 +2846,7 @@ var idx = lunr(function () {
 
   var pos = this._stack.indexOf(existingFn)
   if (pos == -1) {
-    throw new Error(&#x27;Cannot find existingFn&#x27;)
+    throw new Error('Cannot find existingFn')
   }
 
   pos = pos + 1
@@ -2876,7 +2869,7 @@ var idx = lunr(function () {
 
   var pos = this._stack.indexOf(existingFn)
   if (pos == -1) {
-    throw new Error(&#x27;Cannot find existingFn&#x27;)
+    throw new Error('Cannot find existingFn')
   }
 
   this._stack.splice(pos, 0, newFn)
@@ -2931,13 +2924,13 @@ var idx = lunr(function () {
     <li>description and source-code<pre class="apidocCodePre">run = function (tokens) {
   var stackLength = this._stack.length
 
-  for (var i = 0; i &#x3c; stackLength; i++) {
+  for (var i = 0; i &lt; stackLength; i++) {
     var fn = this._stack[i]
 
     tokens = tokens.reduce(function (memo, token, j) {
       var result = fn(token, j, tokens)
 
-      if (result === void 0 || result === &#x27;&#x27;) return memo
+      if (result === void 0 || result === '') return memo
 
       return memo.concat(result)
     }, [])
@@ -2993,7 +2986,7 @@ if (clause.usePipeline) {
   terms = [clause.term]
 }
 
-for (var m = 0; m &#x3c; terms.length; m++) {
+for (var m = 0; m &lt; terms.length; m++) {
   var term = terms[m]
 ...</pre></li>
     </ul>
@@ -3055,9 +3048,9 @@ return {
 
 
 
-suite(&#x27;lunr.stemmer&#x27;, function () {
-  this.add(&#x27;#call&#x27;, function () {
-    for (var i = 0; i &#x3c; words.length; i++) {
+suite('lunr.stemmer', function () {
+  this.add('#call', function () {
+    for (var i = 0; i &lt; words.length; i++) {
       lunr.<span class="apidocCodeKeywordSpan">stemmer</span>(new lunr.Token (words[i]))
     }
   })
@@ -3075,7 +3068,7 @@ suite(&#x27;lunr.stemmer&#x27;, function () {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">stopWordFilter = function (token) {
-  if (token &#x26;&#x26; words[token.toString()] !== token.toString()) return token
+  if (token &amp;&amp; words[token.toString()] !== token.toString()) return token
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -3091,7 +3084,7 @@ suite(&#x27;lunr.stemmer&#x27;, function () {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">trimmer = function (token) {
   return token.update(function (s) {
-    return s.replace(/^\W+/, &#x27;&#x27;).replace(/\W+$/, &#x27;&#x27;)
+    return s.replace(/^\W+/, '').replace(/\W+$/, '')
   })
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -3129,7 +3122,7 @@ var query = new lunr.<span class="apidocCodeKeywordSpan">Query</span>(this.field
 
 fn.call(query, query)
 
-for (var i = 0; i &#x3c; query.clauses.length; i++) {
+for (var i = 0; i &lt; query.clauses.length; i++) {
   /*
 ...</pre></li>
     </ul>
@@ -3149,15 +3142,15 @@ for (var i = 0; i &#x3c; query.clauses.length; i++) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">clause = function (clause) {
-  if (!(&#x27;fields&#x27; in clause)) {
+  if (!('fields' in clause)) {
     clause.fields = this.allFields
   }
 
-  if (!(&#x27;boost&#x27; in clause)) {
+  if (!('boost' in clause)) {
     clause.boost = 1
   }
 
-  if (!(&#x27;usePipeline&#x27; in clause)) {
+  if (!('usePipeline' in clause)) {
     clause.usePipeline = true
   }
 
@@ -3178,7 +3171,7 @@ this.<span class="apidocCodeKeywordSpan">clause</span>(clause)
 return this
 }
 lunr.QueryParseError = function (message, start, end) {
-this.name = &#x22;QueryParseError&#x22;
+this.name = "QueryParseError"
 this.message = message
 this.start = start
 ...</pre></li>
@@ -3256,7 +3249,7 @@ this.start = start
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">lexEOS = function (lexer) {
-  if (lexer.width() &#x3e; 0) {
+  if (lexer.width() &gt; 0) {
     lexer.emit(lunr.QueryLexer.TERM)
   }
 }</pre></li>
@@ -3309,7 +3302,7 @@ this.start = start
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">lexTerm = function (lexer) {
-  if (lexer.width() &#x3e; 1) {
+  if (lexer.width() &gt; 1) {
     lexer.backup()
     lexer.emit(lunr.QueryLexer.TERM)
   }
@@ -3340,21 +3333,21 @@ this.start = start
       return lunr.QueryLexer.lexEOS
     }
 
-    if (char == &#x22;:&#x22;) {
+    if (char == ":") {
       return lunr.QueryLexer.lexField
     }
 
-    if (char == &#x22;~&#x22;) {
+    if (char == "~") {
       lexer.backup()
-      if (lexer.width() &#x3e; 0) {
+      if (lexer.width() &gt; 0) {
         lexer.emit(lunr.QueryLexer.TERM)
       }
       return lunr.QueryLexer.lexEditDistance
     }
 
-    if (char == &#x22;^&#x22;) {
+    if (char == "^") {
       lexer.backup()
-      if (lexer.width() &#x3e; 0) {
+      if (lexer.width() &gt; 0) {
         lexer.emit(lunr.QueryLexer.TERM)
       }
       return lunr.QueryLexer.lexBoost
@@ -3400,7 +3393,7 @@ this.start = start
   do {
     char = this.next()
     charCode = char.charCodeAt(0)
-  } while (charCode &#x3e; 47 &#x26;&#x26; charCode &#x3c; 58)
+  } while (charCode &gt; 47 &amp;&amp; charCode &lt; 58)
 
   if (char != lunr.QueryLexer.EOS) {
     this.backup()
@@ -3442,7 +3435,7 @@ lexer.acceptDigitRun()
   do {
     char = this.next()
     charCode = char.charCodeAt(0)
-  } while (charCode &#x3e; 47 &#x26;&#x26; charCode &#x3c; 58)
+  } while (charCode &gt; 47 &amp;&amp; charCode &lt; 58)
 
   if (char != lunr.QueryLexer.EOS) {
     this.<span class="apidocCodeKeywordSpan">backup</span>()
@@ -3450,7 +3443,7 @@ lexer.acceptDigitRun()
 }
 
 lunr.QueryLexer.prototype.more = function () {
-  return this.pos &#x3c; this.length
+  return this.pos &lt; this.length
 }
 ...</pre></li>
     </ul>
@@ -3475,10 +3468,10 @@ lunr.QueryLexer.prototype.more = function () {
   this.start = this.pos
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-lunr.QueryLexer.FIELD = &#x27;FIELD&#x27;
-lunr.QueryLexer.TERM = &#x27;TERM&#x27;
-lunr.QueryLexer.EDIT_DISTANCE = &#x27;EDIT_DISTANCE&#x27;
-lunr.QueryLexer.BOOST = &#x27;BOOST&#x27;
+lunr.QueryLexer.FIELD = 'FIELD'
+lunr.QueryLexer.TERM = 'TERM'
+lunr.QueryLexer.EDIT_DISTANCE = 'EDIT_DISTANCE'
+lunr.QueryLexer.BOOST = 'BOOST'
 
 lunr.QueryLexer.lexField = function (lexer) {
 lexer.backup()
@@ -3488,7 +3481,7 @@ return lunr.QueryLexer.lexText
 }
 
 lunr.QueryLexer.lexTerm = function (lexer) {
-if (lexer.width() &#x3e; 1) {
+if (lexer.width() &gt; 1) {
   lexer.backup()
 ...</pre></li>
     </ul>
@@ -3510,9 +3503,9 @@ if (lexer.width() &#x3e; 1) {
   this.start = this.pos
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-lunr.QueryLexer.TERM = &#x27;TERM&#x27;
-lunr.QueryLexer.EDIT_DISTANCE = &#x27;EDIT_DISTANCE&#x27;
-lunr.QueryLexer.BOOST = &#x27;BOOST&#x27;
+lunr.QueryLexer.TERM = 'TERM'
+lunr.QueryLexer.EDIT_DISTANCE = 'EDIT_DISTANCE'
+lunr.QueryLexer.BOOST = 'BOOST'
 
 lunr.QueryLexer.lexField = function (lexer) {
 lexer.backup()
@@ -3522,7 +3515,7 @@ return lunr.QueryLexer.lexText
 }
 
 lunr.QueryLexer.lexTerm = function (lexer) {
-if (lexer.width() &#x3e; 1) {
+if (lexer.width() &gt; 1) {
   lexer.backup()
   lexer.emit(lunr.QueryLexer.TERM)
 ...</pre></li>
@@ -3538,10 +3531,10 @@ if (lexer.width() &#x3e; 1) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">more = function () {
-  return this.pos &#x3c; this.length
+  return this.pos &lt; this.length
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-if (lexer.width() &#x3e; 1) {
+if (lexer.width() &gt; 1) {
   lexer.backup()
   lexer.emit(lunr.QueryLexer.TERM)
 }
@@ -3587,7 +3580,7 @@ lunr.QueryLexer.prototype.acceptDigitRun = function () {
   do {
     char = this.<span class="apidocCodeKeywordSpan">next</span>()
     charCode = char.charCodeAt(0)
-  } while (charCode &#x3e; 47 &#x26;&#x26; charCode &#x3c; 58)
+  } while (charCode &gt; 47 &amp;&amp; charCode &lt; 58)
 
   if (char != lunr.QueryLexer.EOS) {
     this.backup()
@@ -3651,7 +3644,7 @@ return lunr.QueryLexer.lexText
 }
 
 lunr.QueryLexer.lexTerm = function (lexer) {
-if (lexer.<span class="apidocCodeKeywordSpan">width</span>() &#x3e; 1) {
+if (lexer.<span class="apidocCodeKeywordSpan">width</span>() &gt; 1) {
   lexer.backup()
   lexer.emit(lunr.QueryLexer.TERM)
 }
@@ -3720,7 +3713,7 @@ lunr.Index.prototype.search = function (queryString) {
   var boost = parseInt(lexeme.str, 10)
 
   if (isNaN(boost)) {
-    var errorMessage = &#x22;boost must be numeric&#x22;
+    var errorMessage = "boost must be numeric"
     throw new lunr.QueryParseError (errorMessage, lexeme.start, lexeme.end)
   }
 
@@ -3745,7 +3738,7 @@ lunr.Index.prototype.search = function (queryString) {
     case lunr.QueryLexer.BOOST:
       return lunr.QueryParser.parseBoost
     default:
-      var errorMessage = &#x22;Unexpected lexeme type &#x27;&#x22; + nextLexeme.type + &#x22;&#x27;&#x22;
+      var errorMessage = "Unexpected lexeme type '" + nextLexeme.type + "'"
       throw new lunr.QueryParseError (errorMessage, nextLexeme.start, nextLexeme.end)
   }
 }</pre></li>
@@ -3771,7 +3764,7 @@ lunr.Index.prototype.search = function (queryString) {
   var editDistance = parseInt(lexeme.str, 10)
 
   if (isNaN(editDistance)) {
-    var errorMessage = &#x22;edit distance must be numeric&#x22;
+    var errorMessage = "edit distance must be numeric"
     throw new lunr.QueryParseError (errorMessage, lexeme.start, lexeme.end)
   }
 
@@ -3796,7 +3789,7 @@ lunr.Index.prototype.search = function (queryString) {
     case lunr.QueryLexer.BOOST:
       return lunr.QueryParser.parseBoost
     default:
-      var errorMessage = &#x22;Unexpected lexeme type &#x27;&#x22; + nextLexeme.type + &#x22;&#x27;&#x22;
+      var errorMessage = "Unexpected lexeme type '" + nextLexeme.type + "'"
       throw new lunr.QueryParseError (errorMessage, nextLexeme.start, nextLexeme.end)
   }
 }</pre></li>
@@ -3820,8 +3813,8 @@ lunr.Index.prototype.search = function (queryString) {
   }
 
   if (parser.query.allFields.indexOf(lexeme.str) == -1) {
-    var possibleFields = parser.query.allFields.map(function (f) { return &#x22;&#x27;&#x22; + f + &#x22;&#x27;&#x22; }).join(),
-        errorMessage = &#x22;unrecognised field &#x27;&#x22; + lexeme.str + &#x22;&#x27;, possible fields: &#x22; + possibleFields
+    var possibleFields = parser.query.allFields.map(function (f) { return "'" + f + "'" }).join(),
+        errorMessage = "unrecognised field '" + lexeme.str + "', possible fields: " + possibleFields
 
     throw new lunr.QueryParseError (errorMessage, lexeme.start, lexeme.end)
   }
@@ -3831,7 +3824,7 @@ lunr.Index.prototype.search = function (queryString) {
   var nextLexeme = parser.peekLexeme()
 
   if (nextLexeme == undefined) {
-    var errorMessage = &#x22;expecting term, found nothing&#x22;
+    var errorMessage = "expecting term, found nothing"
     throw new lunr.QueryParseError (errorMessage, lexeme.start, lexeme.end)
   }
 
@@ -3839,7 +3832,7 @@ lunr.Index.prototype.search = function (queryString) {
     case lunr.QueryLexer.TERM:
       return lunr.QueryParser.parseTerm
     default:
-      var errorMessage = &#x22;expecting a field, found &#x27;&#x22; + nextLexeme.type + &#x22;&#x27;&#x22;
+      var errorMessage = "expecting a field, found '" + nextLexeme.type + "'"
       throw new lunr.QueryParseError (errorMessage, nextLexeme.start, nextLexeme.end)
   }
 }</pre></li>
@@ -3868,7 +3861,7 @@ lunr.Index.prototype.search = function (queryString) {
     case lunr.QueryLexer.TERM:
       return lunr.QueryParser.parseTerm
     default:
-      var errorMessage = &#x22;expected either a field or a term, found &#x22; + lexeme.type + &#x22; with value &#x27;&#x22; + lexeme.str + &#x22;&#x27;&#x22;
+      var errorMessage = "expected either a field or a term, found " + lexeme.type + " with value '" + lexeme.str + "'"
       throw new lunr.QueryParseError (errorMessage, lexeme.start, lexeme.end)
   }
 }</pre></li>
@@ -3893,7 +3886,7 @@ lunr.Index.prototype.search = function (queryString) {
 
   parser.currentClause.term = lexeme.str.toLowerCase()
 
-  if (lexeme.str.indexOf(&#x22;*&#x22;) != -1) {
+  if (lexeme.str.indexOf("*") != -1) {
     parser.currentClause.usePipeline = false
   }
 
@@ -3916,7 +3909,7 @@ lunr.Index.prototype.search = function (queryString) {
     case lunr.QueryLexer.BOOST:
       return lunr.QueryParser.parseBoost
     default:
-      var errorMessage = &#x22;Unexpected lexeme type &#x27;&#x22; + nextLexeme.type + &#x22;&#x27;&#x22;
+      var errorMessage = "Unexpected lexeme type '" + nextLexeme.type + "'"
       throw new lunr.QueryParseError (errorMessage, nextLexeme.start, nextLexeme.end)
   }
 }</pre></li>
@@ -3944,8 +3937,8 @@ lunr.Index.prototype.search = function (queryString) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
   default:
-    var errorMessage = &#x22;expected either a field or a term, found &#x22; + lexeme.type + &#x22; with value &#x27;&#x22; + lexeme
-.str + &#x22;&#x27;&#x22;
+    var errorMessage = "expected either a field or a term, found " + lexeme.type + " with value '" + lexeme
+.str + "'"
     throw new lunr.QueryParseError (errorMessage, lexeme.start, lexeme.end)
 }
 }
@@ -3958,7 +3951,7 @@ if (lexeme == undefined) {
 }
 
 if (parser.query.allFields.indexOf(lexeme.str) == -1) {
-  var possibleFields = parser.query.allFields.map(function (f) { return &#x22;&#x27;&#x22; + f + &#x22;&#x27;&#x22; }).join(),
+  var possibleFields = parser.query.allFields.map(function (f) { return "'" + f + "'" }).join(),
 ...</pre></li>
     </ul>
 
@@ -3977,7 +3970,7 @@ if (parser.query.allFields.indexOf(lexeme.str) == -1) {
   this.currentClause = {}
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-if (lexeme.str.indexOf(&#x22;*&#x22;) != -1) {
+if (lexeme.str.indexOf("*") != -1) {
   parser.currentClause.usePipeline = false
 }
 
@@ -4081,7 +4074,7 @@ this.query.clause(completedClause)
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">Token = function (str, metadata) {
-  this.str = str || &#x22;&#x22;
+  this.str = str || ""
   this.metadata = metadata || {}
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
@@ -4141,7 +4134,7 @@ var str = obj.toString().trim().toLowerCase(),
 */
 lunr.utils.asString = function (obj) {
  if (obj === void 0 || obj === null) {
-   return &#x22;&#x22;
+   return ""
  } else {
    return obj.<span class="apidocCodeKeywordSpan">toString</span>()
  }
@@ -4219,7 +4212,7 @@ lunr.Token.prototype.update = function (fn) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">Builder = function () {
-  this.previousWord = &#x22;&#x22;
+  this.previousWord = ""
   this.root = new lunr.TokenSet
   this.uncheckedNodes = []
   this.minimizedNodes = {}
@@ -4239,7 +4232,7 @@ lunr.Token.prototype.update = function (fn) {
     <li>description and source-code<pre class="apidocCodePre">fromArray = function (arr) {
   var builder = new lunr.TokenSet.Builder
 
-  for (var i = 0, len = arr.length; i &#x3c; len; i++) {
+  for (var i = 0, len = arr.length; i &lt; len; i++) {
     builder.insert(arr[i])
   }
 
@@ -4275,7 +4268,7 @@ lunr.Builder.prototype.createTokenSet = function () {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">fromClause = function (clause) {
-  if (&#x27;editDistance&#x27; in clause) {
+  if ('editDistance' in clause) {
     return lunr.TokenSet.fromFuzzyString(clause.term, clause.editDistance)
   } else {
     return lunr.TokenSet.fromString(clause.term)
@@ -4292,7 +4285,7 @@ clause.term = term
 var termTokenSet = lunr.TokenSet.<span class="apidocCodeKeywordSpan">fromClause</span>(clause),
     expandedTerms = this.tokenSet.intersect(termTokenSet).toArray()
 
-for (var j = 0; j &#x3c; expandedTerms.length; j++) {
+for (var j = 0; j &lt; expandedTerms.length; j++) {
   /*
    * For each term calculate the score as the term relates to the
    * query using the same calculation used to score documents during
@@ -4322,7 +4315,7 @@ for (var j = 0; j &#x3c; expandedTerms.length; j++) {
     var frame = stack.pop()
 
     // no edit
-    if (frame.str.length &#x3e; 0) {
+    if (frame.str.length &gt; 0) {
       var char = frame.str.charAt(0),
           noEditNode
 
@@ -4347,7 +4340,7 @@ for (var j = 0; j &#x3c; expandedTerms.length; j++) {
     // deletion
     // can only do a deletion if we have enough edits remaining
     // and if there are characters left to delete in the string
-    if (frame.editsRemaining &#x3e; 0 &#x26;&#x26; frame.str.length &#x3e; 1) {
+    if (frame.editsRemaining &gt; 0 &amp;&amp; frame.str.length &gt; 1) {
       var char = frame.str.charAt(1),
           deletionNode
 
@@ -4358,7 +4351,7 @@ for (var j = 0; j &#x3c; expandedTerms.length; j++) {
         frame.node.edges[char] = deletionNode
       }
 
-      if (frame.str.length &#x3c;= 2) {
+      if (frame.str.length &lt;= 2) {
         deletionNode.final = true
       } else {
         stack.push({
@@ -4371,19 +4364,19 @@ for (var j = 0; j &#x3c; expandedTerms.length; j++) {
 
     // deletion
     // just removing the last character from the str
-    if (frame.editsRemaining &#x3e; 0 &#x26;&#x26; frame.str.length == 1) {
+    if (frame.editsRemaining &gt; 0 &amp;&amp; frame.str.length == 1) {
       frame.node.final = true
     }
 
     // substitution
     // can only do a substitution if we have enough edits remaining
     // and if there are characters left to substitute
-    if (frame.editsRemaining &#x3e; 0 &#x26;&#x26; frame.str.length &#x3e;= 1) {
-      if (&#x22;*&#x22; in frame.node.edges) {
-        var substitutionNode = frame.node.edges[&#x22;*&#x22;]
+    if (frame.editsRemaining &gt; 0 &amp;&amp; frame.str.length &gt;= 1) {
+      if ("*" in frame.node.edges) {
+        var substitutionNode = frame.node.edges["*"]
       } else {
         var substitutionNode = new lunr.TokenSet
-        frame.node.edges[&#x22;*&#x22;] = substitutionNode
+        frame.node.edges["*"] = substitutionNode
       }
 
       if (frame.str.length == 1) {
@@ -4399,12 +4392,12 @@ for (var j = 0; j &#x3c; expandedTerms.length; j++) {
 
     // insertion
     // can only do insertion if there are edits remaining
-    if (frame.editsRemaining &#x3e; 0) {
-      if (&#x22;*&#x22; in frame.node.edges) {
-        var insertionNode = frame.node.edges[&#x22;*&#x22;]
+    if (frame.editsRemaining &gt; 0) {
+      if ("*" in frame.node.edges) {
+        var insertionNode = frame.node.edges["*"]
       } else {
         var insertionNode = new lunr.TokenSet
-        frame.node.edges[&#x22;*&#x22;] = insertionNode
+        frame.node.edges["*"] = insertionNode
       }
 
       if (frame.str.length == 0) {
@@ -4421,7 +4414,7 @@ for (var j = 0; j &#x3c; expandedTerms.length; j++) {
     // transposition
     // can only do a transposition if there are edits remaining
     // and there are enough characters to transpose
-    if (frame.editsRemaining &#x3e; 0 &#x26;&#x26; frame.str.length &#x3e; 1) {
+    if (frame.editsRemaining &gt; 0 &amp;&amp; frame.str.length &gt; 1) {
       var charA = frame.str.charAt(0),
           charB = frame.str.charAt(1),
           transposeNode
@@ -4454,7 +4447,7 @@ for (var j = 0; j &#x3c; expandedTerms.length; j++) {
 * @returns {lunr.TokenSet}
 */
 lunr.TokenSet.fromClause = function (clause) {
- if (&#x27;editDistance&#x27; in clause) {
+ if ('editDistance' in clause) {
    return lunr.TokenSet.<span class="apidocCodeKeywordSpan">fromFuzzyString</span>(clause.term, clause.editDistance)
  } else {
    return lunr.TokenSet.fromString(clause.term)
@@ -4488,11 +4481,11 @@ lunr.TokenSet.fromClause = function (clause) {
    * referencing edge is introduced to continually match
    * any number of any characters.
    */
-</span>  for (var i = 0, len = str.length; i &#x3c; len; i++) {
+</span>  for (var i = 0, len = str.length; i &lt; len; i++) {
     var char = str[i],
         final = (i == len - 1)
 
-    if (char == &#x22;*&#x22;) {
+    if (char == "*") {
       wildcardFound = true
       node.edges[char] = node
       node.final = final
@@ -4506,7 +4499,7 @@ lunr.TokenSet.fromClause = function (clause) {
 
       // TODO: is this needed anymore?
       if (wildcardFound) {
-        node.edges[&#x22;*&#x22;] = root
+        node.edges["*"] = root
       }
     }
   }
@@ -4518,7 +4511,7 @@ lunr.TokenSet.fromClause = function (clause) {
 * @returns {lunr.TokenSet}
 */
 lunr.TokenSet.fromClause = function (clause) {
- if (&#x27;editDistance&#x27; in clause) {
+ if ('editDistance' in clause) {
    return lunr.TokenSet.fromFuzzyString(clause.term, clause.editDistance)
  } else {
    return lunr.TokenSet.<span class="apidocCodeKeywordSpan">fromString</span>(clause.term)
@@ -4549,7 +4542,7 @@ lunr.TokenSet.fromClause = function (clause) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">Builder = function () {
-  this.previousWord = &#x22;&#x22;
+  this.previousWord = ""
   this.root = new lunr.TokenSet
   this.uncheckedNodes = []
   this.minimizedNodes = {}
@@ -4578,7 +4571,7 @@ lunr.TokenSet.fromClause = function (clause) {
 lunr.TokenSet.fromArray = function (arr) {
  var builder = new lunr.TokenSet.Builder
 
- for (var i = 0, len = arr.length; i &#x3c; len; i++) {
+ for (var i = 0, len = arr.length; i &lt; len; i++) {
    builder.insert(arr[i])
  }
 
@@ -4606,11 +4599,11 @@ lunr.TokenSet.fromArray = function (arr) {
   var node,
       commonPrefix = 0
 
-  if (word &#x3c; this.previousWord) {
-    throw new Error (&#x22;Out of order word insertion&#x22;)
+  if (word &lt; this.previousWord) {
+    throw new Error ("Out of order word insertion")
   }
 
-  for (var i = 0; i &#x3c; word.length &#x26;&#x26; i &#x3c; this.previousWord.length; i++) {
+  for (var i = 0; i &lt; word.length &amp;&amp; i &lt; this.previousWord.length; i++) {
     if (word[i] != this.previousWord[i]) break
     commonPrefix++
   }
@@ -4623,7 +4616,7 @@ lunr.TokenSet.fromArray = function (arr) {
     node = this.uncheckedNodes[this.uncheckedNodes.length - 1].child
   }
 
-  for (var i = commonPrefix; i &#x3c; word.length; i++) {
+  for (var i = commonPrefix; i &lt; word.length; i++) {
     var nextNode = new lunr.TokenSet,
         char = word[i]
 
@@ -4648,7 +4641,7 @@ lunr.TokenSet.fromArray = function (arr) {
 lunr.TokenSet.fromArray = function (arr) {
   var builder = new lunr.TokenSet.Builder
 
-  for (var i = 0, len = arr.length; i &#x3c; len; i++) {
+  for (var i = 0, len = arr.length; i &lt; len; i++) {
     builder.<span class="apidocCodeKeywordSpan">insert</span>(arr[i])
   }
 
@@ -4670,7 +4663,7 @@ lunr.TokenSet.fromArray = function (arr) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">minimize = function (downTo) {
-  for (var i = this.uncheckedNodes.length - 1; i &#x3e;= downTo; i--) {
+  for (var i = this.uncheckedNodes.length - 1; i &gt;= downTo; i--) {
     var node = this.uncheckedNodes[i],
         childKey = node.child.toString()
 
@@ -4678,7 +4671,7 @@ lunr.TokenSet.fromArray = function (arr) {
       node.parent.edges[node.char] = this.minimizedNodes[childKey]
     } else {
       // Cache the key for this node since
-      // we know it can&#x27;t change anymore
+      // we know it can't change anymore
       node.child._str = childKey
 
       this.minimizedNodes[childKey] = node.child
@@ -4690,7 +4683,7 @@ lunr.TokenSet.fromArray = function (arr) {
     <li>example usage<pre class="apidocCodePre">...
 }
 
-for (var i = 0; i &#x3c; word.length &#x26;&#x26; i &#x3c; this.previousWord.length; i++) {
+for (var i = 0; i &lt; word.length &amp;&amp; i &lt; this.previousWord.length; i++) {
   if (word[i] != this.previousWord[i]) break
   commonPrefix++
 }
@@ -4734,23 +4727,23 @@ if (this.uncheckedNodes.length == 0) {
 
     // NOTE: As with the #toString method, we are using
     // Object.keys and a for loop instead of a for-in loop
-    // as both of these objects enter &#x27;hash&#x27; mode, causing
+    // as both of these objects enter 'hash' mode, causing
     // the function to be de-optimised in V8
     var qEdges = Object.keys(frame.qNode.edges),
         qLen = qEdges.length,
         nEdges = Object.keys(frame.node.edges),
         nLen = nEdges.length
 
-    for (var q = 0; q &#x3c; qLen; q++) {
+    for (var q = 0; q &lt; qLen; q++) {
       var qEdge = qEdges[q]
 
-      for (var n = 0; n &#x3c; nLen; n++) {
+      for (var n = 0; n &lt; nLen; n++) {
         var nEdge = nEdges[n]
 
-        if (nEdge == qEdge || qEdge == &#x27;*&#x27;) {
+        if (nEdge == qEdge || qEdge == '*') {
           var node = frame.node.edges[nEdge],
               qNode = frame.qNode.edges[qEdge],
-              final = node.final &#x26;&#x26; qNode.final,
+              final = node.final &amp;&amp; qNode.final,
               next = undefined
 
           if (nEdge in frame.output.edges) {
@@ -4791,7 +4784,7 @@ if (this.uncheckedNodes.length == 0) {
 var termTokenSet = lunr.TokenSet.fromClause(clause),
     expandedTerms = this.tokenSet.<span class="apidocCodeKeywordSpan">intersect</span>(termTokenSet).toArray()
 
-for (var j = 0; j &#x3c; expandedTerms.length; j++) {
+for (var j = 0; j &lt; expandedTerms.length; j++) {
   /*
    * For each term calculate the score as the term relates to the
    * query using the same calculation used to score documents during
@@ -4813,7 +4806,7 @@ for (var j = 0; j &#x3c; expandedTerms.length; j++) {
   var words = []
 
   var stack = [{
-    prefix: &#x22;&#x22;,
+    prefix: "",
     node: this
   }]
 
@@ -4826,7 +4819,7 @@ for (var j = 0; j &#x3c; expandedTerms.length; j++) {
       words.push(frame.prefix)
     }
 
-    for (var i = 0; i &#x3c; len; i++) {
+    for (var i = 0; i &lt; len; i++) {
       var edge = edges[i]
 
       stack.push({
@@ -4848,7 +4841,7 @@ for (var j = 0; j &#x3c; expandedTerms.length; j++) {
 var termTokenSet = lunr.TokenSet.fromClause(clause),
     expandedTerms = this.tokenSet.intersect(termTokenSet).<span class="apidocCodeKeywordSpan">toArray</span>()
 
-for (var j = 0; j &#x3c; expandedTerms.length; j++) {
+for (var j = 0; j &lt; expandedTerms.length; j++) {
   /*
    * For each term calculate the score as the term relates to the
    * query using the same calculation used to score documents during
@@ -4868,7 +4861,7 @@ for (var j = 0; j &#x3c; expandedTerms.length; j++) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">toString = function () {
   // NOTE: Using Object.keys here as this.edges is very likely
-  // to enter &#x27;hash-mode&#x27; with many keys being added
+  // to enter 'hash-mode' with many keys being added
   //
   // avoiding a for-in loop here as it leads to the function
   // being de-optimised (at least in V8). From some simple
@@ -4879,11 +4872,11 @@ for (var j = 0; j &#x3c; expandedTerms.length; j++) {
     return this._str
   }
 
-  var str = this.final ? &#x27;1&#x27; : &#x27;0&#x27;,
+  var str = this.final ? '1' : '0',
       labels = Object.keys(this.edges).sort(),
       len = labels.length
 
-  for (var i = 0; i &#x3c; len; i++) {
+  for (var i = 0; i &lt; len; i++) {
     var label = labels[i],
         node = this.edges[label]
 
@@ -4898,7 +4891,7 @@ for (var j = 0; j &#x3c; expandedTerms.length; j++) {
 */
 lunr.utils.asString = function (obj) {
  if (obj === void 0 || obj === null) {
-   return &#x22;&#x22;
+   return ""
  } else {
    return obj.<span class="apidocCodeKeywordSpan">toString</span>()
  }
@@ -4932,7 +4925,7 @@ lunr.utils.asString = function (obj) {
     <li>example usage<pre class="apidocCodePre">...
 }
 
-for (var i = 0; i &#x3c; serializedVectors.length; i++, documentCount++) {
+for (var i = 0; i &lt; serializedVectors.length; i++, documentCount++) {
   var tuple = serializedVectors[i],
       ref = tuple[0],
       elements = tuple[1]
@@ -4940,7 +4933,7 @@ for (var i = 0; i &#x3c; serializedVectors.length; i++, documentCount++) {
   documentVectors[ref] = new lunr.<span class="apidocCodeKeywordSpan">Vector</span>(elements)
 }
 
-for (var i = 0; i &#x3c; serializedInvertedIndex.length; i++) {
+for (var i = 0; i &lt; serializedInvertedIndex.length; i++) {
   var tuple = serializedInvertedIndex[i],
       term = tuple[0],
       posting = tuple[1]
@@ -4968,11 +4961,11 @@ for (var i = 0; i &#x3c; serializedInvertedIndex.length; i++) {
       aVal = 0, bVal = 0,
       i = 0, j = 0
 
-  while (i &#x3c; aLen &#x26;&#x26; j &#x3c; bLen) {
+  while (i &lt; aLen &amp;&amp; j &lt; bLen) {
     aVal = a[i], bVal = b[j]
-    if (aVal &#x3c; bVal) {
+    if (aVal &lt; bVal) {
       i += 2
-    } else if (aVal &#x3e; bVal) {
+    } else if (aVal &gt; bVal) {
       j += 2
     } else if (aVal == bVal) {
       dotProduct += a[i + 1] * b[j + 1]
@@ -5025,16 +5018,16 @@ lunr.Vector.prototype.similarity = function (otherVector) {
       pivot = Math.floor((sliceLength / 2) / 2) * 2,
       pivotIdx = this.elements[pivot]
 
-  while (sliceLength &#x3e; 2) {
+  while (sliceLength &gt; 2) {
     if (pivotIdx == insertIdx) {
-      throw &#x22;duplicate index&#x22;
+      throw "duplicate index"
     }
 
-    if (insertIdx &#x3e; pivotIdx) {
+    if (insertIdx &gt; pivotIdx) {
       start = pivot
     }
 
-    if (insertIdx &#x3c; pivotIdx) {
+    if (insertIdx &lt; pivotIdx) {
       end = pivot
     }
 
@@ -5043,11 +5036,11 @@ lunr.Vector.prototype.similarity = function (otherVector) {
     pivotIdx = this.elements[pivot]
   }
 
-  if (pivotIdx &#x3e; insertIdx) {
+  if (pivotIdx &gt; insertIdx) {
     this.elements.splice(pivot, 0, insertIdx, val)
   }
 
-  if (pivotIdx &#x3c; insertIdx) {
+  if (pivotIdx &lt; insertIdx) {
     this.elements.splice(pivot + 2, 0, insertIdx, val)
   }
 }</pre></li>
@@ -5058,7 +5051,7 @@ lunr.Vector.prototype.similarity = function (otherVector) {
 lunr.TokenSet.fromArray = function (arr) {
   var builder = new lunr.TokenSet.Builder
 
-  for (var i = 0, len = arr.length; i &#x3c; len; i++) {
+  for (var i = 0, len = arr.length; i &lt; len; i++) {
     builder.<span class="apidocCodeKeywordSpan">insert</span>(arr[i])
   }
 
@@ -5085,7 +5078,7 @@ lunr.TokenSet.fromArray = function (arr) {
   var sumOfSquares = 0,
       elementsLength = this.elements.length
 
-  for (var i = 1; i &#x3c; elementsLength; i += 2) {
+  for (var i = 1; i &lt; elementsLength; i += 2) {
     var val = this.elements[i]
     sumOfSquares += val * val
   }
@@ -5154,7 +5147,7 @@ lunr.Vector.prototype.similarity = function (otherVector) {
     <li>description and source-code<pre class="apidocCodePre">toArray = function () {
   var output = new Array (this.elements.length / 2)
 
-  for (var i = 1, j = 0; i &#x3c; this.elements.length; i += 2, j++) {
+  for (var i = 1, j = 0; i &lt; this.elements.length; i += 2, j++) {
     output[j] = this.elements[i]
   }
 
@@ -5170,7 +5163,7 @@ lunr.Vector.prototype.similarity = function (otherVector) {
 var termTokenSet = lunr.TokenSet.fromClause(clause),
     expandedTerms = this.tokenSet.intersect(termTokenSet).<span class="apidocCodeKeywordSpan">toArray</span>()
 
-for (var j = 0; j &#x3c; expandedTerms.length; j++) {
+for (var j = 0; j &lt; expandedTerms.length; j++) {
   /*
    * For each term calculate the score as the term relates to the
    * query using the same calculation used to score documents during
@@ -5226,7 +5219,7 @@ return {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">asString = function (obj) {
   if (obj === void 0 || obj === null) {
-    return &#x22;&#x22;
+    return ""
   } else {
     return obj.toString()
   }
@@ -5259,7 +5252,7 @@ var str = obj.toString().trim().toLowerCase(),
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">warn = function (message) {
-  if (global.console &#x26;&#x26; console.warn) {
+  if (global.console &amp;&amp; console.warn) {
     console.warn(message)
   }
 }</pre></li>
@@ -5270,7 +5263,7 @@ var str = obj.toString().trim().toLowerCase(),
 lunr.utils.warn = (function (global) {
  /* eslint-disable no-console */
  return function (message) {
-   if (global.console &#x26;&#x26; console.warn) {
+   if (global.console &amp;&amp; console.warn) {
      console.<span class="apidocCodeKeywordSpan">warn</span>(message)
    }
  }
@@ -5291,3 +5284,4 @@ lunr.utils.warn = (function (global) {
     ]
 </div>
 </div>
+</body></html>
